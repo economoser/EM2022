@@ -7,11 +7,11 @@ This package contains all replication materials for the results presented in Eng
 
 
 ## Overview of codes
---- This repository contains the following directories:
+This repository contains the following directories:
 
-	--- ~/1 draft
-	--- ~/2 empirics
-	--- ~/3 model
+1. ~/1 draft
+2. ~/2 empirics
+3. ~/3 model
 
 --- We describe each of these below
 
