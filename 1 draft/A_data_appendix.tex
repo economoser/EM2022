@@ -1,0 +1,324 @@
+% !TEX root = EIMW2022.tex
+
+\section{Data Appendix\label{APPENDIX: Data}}
+
+This appendix provides further details on the datasets introduced in Section \ref{SECTION: Data}, including subsections on %
+%
+further data description (Appendix \ref{subsec:Dataset-description}), %
+%
+additional summary statistics (Appendix \ref{subsec:Summary-statistics}), %
+%
+a comparison of official labor force statistics and sample sizes in the RAIS administrative data (Appendix \ref{app_subsec:sample_selection_size}), and%
+%
+an exploration of explained wage dispersion when (not) controlling for observable and unobservable heterogeneity (Appendix \ref{app_subsec:unobserved_heterogeneity}). %
+
+
+\clearpage
+\subsection{Dataset description\label{subsec:Dataset-description}}
+
+\paragraph{Administrative linked employer-employee data (RAIS).}
+
+Our main data source is the \textit{Rela}\emph{\c{c}\~{a}}\textit{o
+Anual de Informa}\emph{\c{c}\~{o}}\textit{es Sociais} (RAIS), a linked
+employer-employee register by the Brazilian Ministry of the Economy (\emph{Minist\'{e}rio
+da Economia}). We use the RAIS microdata with person
+and firm identifiers covering the period 1985--2018 available to
+us under a confidentiality agreement with the Brazilian ministry.
+
+Firms' survey response is mandatory, and misreporting is deterred
+through audits and threat of fines. The earliest available data go back to 1985, with
+coverage becoming near universal from 1994 onward. The data contain
+detailed information on job characteristics, with approximately 66 million formal
+sector employment spells recorded in 2018. Although reports are annual,
+we observe for every job spell the date of accession and separation
+in addition to average monthly earnings. We keep for each worker the
+highest-paid among each year's longest employment spells. As Brazil's
+minimum wage is set in terms of monthly earnings, henceforth we interchangeably
+refer to this income concept as ``earnings'' or ``wages.''
+
+The main text presents results of both plug-in and leave-one-out bias corrected variance components of log wages based, following the methodology and code by KSS. For our main analysis, we restrict attention to the largest leave-one-out connected set but do not impose any additional restrictions on either earnings, firm size, or the minimum number of switchers across firms. For a set of additional estimation results of the AKM wage equation \eqref{eq: AKM framework}, we keep workers with earnings not equal to or weakly above the minimum wage.
+
+We devise our own cleaning procedure for these data, starting with
+the raw text files, benefiting from guidance by the data team at IPEA.
+Our cleaning procedure consists of three stages. The first stage reads
+in and standardizes the format of the raw data files that were transmitted
+to us at the region-year level, saving a set of compatible region-year
+files. The second stage reads in all region files within a year and
+applies a set of cleaning and recoding procedures to the data to make
+them consistent within each year, saving a set of yearly files. The
+third stage reads in all yearly files and applies a set of cleaning
+procedures to the data to make them consistent across years. Whenever
+possible, we use the official crosswalks provided by IBGE to convert
+industry (IBGE, CNAE 1.0, and CNAE 2.0 classifications), occupation
+(CBO 1994 and CBO 2002), and municipality codes (IBGE classification).
+
+
+\paragraph{Cross-sectional household survey data (PNAD).}
+
+A substantial fraction of Brazil's working-age population is not formally
+employed and hence not covered by the RAIS. To address this gap, we
+complement our analysis using data from the \emph{Pesquisa Nacional
+por Amostra de Domic\'{i}lios (PNAD)}, a nationally representative
+annual household survey from 1996 to 2012. Respondents are asked to produce a formal
+work permit (\emph{Carteira de Trabalho e Previd\^{e}ncia Social
+assinada}). Following \citetappendix{MeghirNarita2015_appendix}, we classify as informal
+all self-employed and those in remunerated employment without a work
+permit.
+
+The PNAD data collection consists of a double-stratified sampling
+scheme by region and municipality, interviewing a representative of
+households in Brazil. The survey asks the household head to respond
+on behalf of all family members and report a rich set of demographic
+and employment-related questions. In particular, the survey asks a
+question about whether the respondent holds a legal work permit. We
+use the answer to this survey question to identify individuals as
+working in the formal or in the informal sector. Survey questions
+regarding income and demographics of the respondent household members
+are comparable to the U.S. CPS. We
+keep only observations that satisfy our selection criteria and have
+non-missing observations for labor income, whose variable definition
+we harmonize across years.
+
+The raw microdata are publicly available for download starting from
+1996 at \url{ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/}. For basic
+cleaning, starting with the raw data in text format, we use the standardized
+cleaning procedures adopted from the Data Zoom suite developed at
+PUC-Rio and available for replication online at \url{http://www.econ.puc-rio.br/datazoom/english/index.html}.
+From there, we apply a set of procedures to clean and recode key variables
+used in our analysis.
+
+
+\paragraph{Longitudinal household survey data (PME).}
+
+We also use a second household survey, the \emph{Pesquisa Mensal de
+Emprego (PME)}, conducted between 2002 and 2012 in Brazil's six largest metropolitan regions: Belo Horizonte, Porto Alegre, Recife, Rio de Janeiro, Salvador, and S{\~{a}}o Paulo.
+The advantage of this dataset is that it features for every respondent
+two continuous four-month interview spells separated by an eight-month pause.
+Starting in 2002, this short panel component allows us to compute monthly
+transition rates of workers between different employment states, including formal and informal employment. For presentation
+purposes, we label formal sector workers as ``employed,'' and pool
+informal sector workers and the unemployed under the label ``nonemployed.''
+We distinguish between the disaggregated categories in our empirical
+analysis of minimum wage effects later.
+
+The raw microdata are publicly available for download starting from
+March 2002 at \url{ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/}.
+For basic cleaning, starting with the raw data in text format, we
+use the standardized cleaning procedures adopted from the Data Zoom
+suite developed at PUC-Rio and available for replication online at
+\url{http://www.econ.puc-rio.br/datazoom/english/index.html}. From
+there, we apply a set of procedures to clean and recode key variables
+used in our analysis, similar to the procedures that we applied to
+the PNAD data.
+
+
+
+
+\clearpage
+\subsection{Summary statistics\label{subsec:Summary-statistics}}
+
+\paragraph{Summary statistics for administrative linked employer-employee data (RAIS).}
+
+Figure \ref{fig: RAIS summary stats} shows mean values of basic descriptive
+variables---monthly earnings in multiples of the minimum wage, years
+of education, age in years, and job tenure in years---throughout
+the earnings distribution for 1996 in panel \subref{subfig: RAIS summary stats-A}
+and for 2018 in panel \subref{subfig: RAIS summary stats-B}. Zooming
+in on educational attainment, which increased significantly over this
+period, Figure \ref{fig: RAIS summary stats-2} shows the distribution
+of eduaction degrees grouped into individuals with primary school
+or lower levels of education, middle school, high school, and college
+or higher levels of education for 1996 in panel \subref{subfig: RAIS summary stats-2-A}
+and for 2018 in panel \subref{subfig: RAIS summary stats-2-B}.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{RAIS cross-sectional summary statistics, 1996 and 2018\label{fig: RAIS summary stats}}
+  %
+  \prefigvspace
+  %
+  \subfloat[1996\label{subfig: RAIS summary stats-A}]{\hspace{3mm}\includegraphics[width=0.4\columnwidth]{_figures/figA1A.pdf}\hspace{3mm}}% _figures/sumstats_demographics_1996.pdf
+  \subfloat[2018\label{subfig: RAIS summary stats-B}]{\hspace{3mm}\includegraphics[width=0.4\columnwidth]{_figures/figA1B.pdf}\hspace{3mm}}% _figures/sumstats_demographics_2018.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure shows mean monthly
+      earnings (``wages''), years of education, age, and tenure across
+      wage percentiles for 1996 in panel \subref{subfig: RAIS summary stats-A}
+      and for 2018 in panel \subref{subfig: RAIS summary stats-B}. All
+      statistics are for adult male workers of age 18--54. %
+      \emph{\scriptsize{}Source:} RAIS, 1996 and 2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{RAIS education degree shares, 1996 and 2018\label{fig: RAIS summary stats-2}}
+  %
+  \prefigvspace
+  %
+  \subfloat[1996\label{subfig: RAIS summary stats-2-A}]{\hspace{3mm}\includegraphics[width=0.4\columnwidth]{_figures/figA2A.pdf}\hspace{3mm}}% _figures/sumstats_edu_1996.pdf
+  \subfloat[2018\label{subfig: RAIS summary stats-2-B}]{\hspace{3mm}\includegraphics[width=0.4\columnwidth]{_figures/figA2B.pdf}\hspace{3mm}}% _figures/sumstats_edu_2018.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure shows shares of education
+      degrees across wage percentiles for 1996 in panel \subref{subfig: RAIS summary stats-2-A}
+      and for 2018 in panel \subref{subfig: RAIS summary stats-2-B}. All
+      statistics are for adult male workers of age 18--54. %
+      \emph{\scriptsize{}Source:} RAIS, 1996 and 2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\clearpage
+
+
+\paragraph{Summary statistics for cross-sectional household survey data (PNAD).}
+
+Table \ref{tab: PNAD summary statistics} presents summary statistics
+on the PNAD data.
+
+
+\begin{table}[!htb]
+  %
+  \centering
+  \caption{Summary statistics for cross-sectional household survey data (PNAD)\label{tab: PNAD summary statistics}}
+  %
+  \pretabvspace
+  %
+  \input{_tables/tabA1.tex}
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Table shows summary statistics
+      on wages, employment rates, and formal employment shares between 1996
+      and 2012. All statistics are for adult male workers of age 18--54.
+      Real wages are measured in 2012 BRL and in logs. Surveys are not available
+      for census years 2000 and 2010. %
+      \emph{\scriptsize{}Source:} PNAD, 1996--2012.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{table}
+
+
+\clearpage
+
+
+\paragraph{Summary statistics for longitudinal household survey data (PME).}
+
+We present summary statistics on the PME data in Table \ref{tab: PME summary statistics}.
+
+\begin{table}[!htb]
+  %
+  \centering
+  \caption{Summary statistics for longitudinal household survey (PME)\label{tab: PME summary statistics}}
+  %
+  \pretabvspace
+  %
+  \input{_tables/tabA2.tex}
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Table shows number of workers and monthly transition rates between employment (i.e., formal employment) and nonemployment
+      (i.e., informal employment + unemployment). All statistics are for adult male workers of age 18--54. %
+      \emph{\scriptsize{}Source:} PME, 2002--2012.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{table}
+
+
+
+
+\clearpage
+\subsection{Details of sample selection and sample size\label{app_subsec:sample_selection_size}}
+
+Table \ref{tab:sample_sizes} shows official labor force statistics (panel A) and different sample sizes computed in the RAIS administrative data (panel B). Comparing the numbers of formal sector workers, we find that the two data sources are compatible. In 1996, official statistics state that---depending on the definition of formality---there are around 29,015,225 formal sector workers in Brazil and 29,600,720 unique workers recorded in RAIS. In 2018, official statistics state that there are around 54,611,555 formal sector workers in Brazil and 55,740,072 unique workers recorded in RAIS. That RAIS captures a somewhat larger number of workers is not surprising given that official statistics are based on survey data with respect to a reference week or month, while RAIS covers any employment spells during the entire calendar year. Cumulatively applying our selection criteria based on gender (only males), age (18--54), and nonmissing key information (earnings, worker and employer identifiers, and employment dates), our RAIS sample comprises 17,201,101 workers in 1996 and 27,602,584 workers in 2018.%
+%
+\footnote{In a previous version of the paper, we also excluded workers with earnings below the minimum wage and those at firms below a minimum employment threshold, which led to a slightly smaller sample size than that reported here.} %
+%
+
+\begin{table}[!htb]
+  %
+  \centering
+  \caption{Official labor force statistics and sample sizes in RAIS administrative data\label{tab:sample_sizes}}
+  %
+  \pretabvspace
+  %
+  \input{_tables/tabA3.tex}
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Table shows official labor force statistics (panel A) and sample sizes calculated based on the RAIS administrative data for 1996 and 2018 (panel B). Official labor force statistics are made available by World Bank (indicator ID: SL.TLF.TOTL.IN) and are derived using data from the International Labour Organization, ILOSTAT database. Unemployment rate is from IBGE and is derived using data from the PNAD-Cont{\'{i}}nua household surveys for October-December 2018. Informality rate for 1996 is from IPEA and is derived from the PNAD household survey data for 2018, while that for 2018 is from IBGE and is derived from the PNAD-Cont{\'{i}}nua household survey data for July-September 2018. Additional selection criteria in the last line of the table include a requirement of nonmissing values for earnings, worker identifiers, employer identifiers, and employment dates.
+      \emph{\scriptsize{}Source:} World Bank, IBGE, IPEA, and RAIS, 1996 and 2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{table}
+
+
+The main difference between the number of workers reported in the official labor force statistics and our final sample in RAIS is due to our selection based on gender (only males) and age (18--54). The minimum wage is significantly more binding for men outside of this age range as well as for women. Thus, our analysis focuses on a population subgroup that is relatively less affected by the minimum wage. In this sense, our results may understate the effects of the minimum wage on Brazil's full population.
+
+
+
+
+\clearpage
+\subsection{The importance of unobserved worker heterogeneity in wages\label{app_subsec:unobserved_heterogeneity}}
+
+Let $i$ index workers, $t$ index years, and let $edu(i) \in \{ e_{1}, e_{2}, \ldots, e_{N} \}$ be the educational attainment group of individual $i$, which in our data is a permanent worker characteristic. The log wage of individual $i$ in year $t$ is denoted $y_{it}$. Then we can decompose the total variance of log wages as
+%
+\begin{align}
+  Var(y_{it}) = \underbrace{Var(\mathbb{E}[y_{it} | edu(i)])}_{\text{Between-education-group variance}} + \underbrace{Var(y_{it} - \mathbb{E}_{i}[y_{it} | edu(i)])}_{\text{Within-education-group variance}},\label{eq:edu_var_decomposition}
+\end{align}
+%
+The first term on the right-hand side of equation \eqref{eq:edu_var_decomposition} is the variance of education-mean log wages, which we call the between-education-group variance. The second term is the variance of worker-year level deviations from the education-mean log wages, which we call the within-education-group variance. For education to be a meaningful skill proxy, we require the between-education-group variance to make up a significant share of the total variance of log wages. Implementing the decomposition in equation \eqref{eq:edu_var_decomposition} on the RAIS data from 1994--1998, we find that out of a total variance of wages of 75.0 log points, around 14.1 log points (19 percent) are due to the between-education-group variance component, while 60.9 log points (81 percent) are due to the within-education-group variance component. From this, we conclude that, while education is a significant predictor of wages in the data, the vast majority of wage dispersion is within education groups.
+
+We can extend our analysis to other worker and job attributes as observable skill proxies. To this end, we estimate a sequence of Mincerian wage equations with cumulatively added controls for observable worker characteristics, unobservable time-invariant worker" characteristics, and unobservable time-invariant firm characteristics. Observable worker characteristics include education-specific age dummies, education-specific year dummies, hours dummies, and occupation dummies. Table \ref{tab:edu_var_decomposition} shows the results from four different specifications estimated on the RAIS data. With rich controls for observable worker characteristics (column 1), the coefficient of determination ($R^2$) is 48.6 percent, while the root mean squared error (RMSE) is 0.623. This suggests that the largest share of wage heterogeneity and significant dispersion in absolute terms is not explained by observables. Adding firm dummies to the first specification (column 2) leads to an $R^2$ of 76.4 percent, suggesting that firms are an important in wage determination. However, as AKM have argued, some of this explained variance may itself be attributable to unobserved worker heterogeneity. When we add worker dummies instead of firm dummies to the first specification (column 3), we find an $R^2$ of 88.3 percent and an RMSE of 0.347, meaning that the explanatory power is almost twice as high when controlling worker observable and unobservable characteristics relative to when controlling only for observables. Together, the estimation results from this sequence of wage equations suggest that unobservable worker characteristics constitute an important share of overall wage dispersion, more important than education and a number of other observable characteristics.
+%
+\footnote{All wage equations here are estimated on the largest available set of workers, whereas Section \ref{subsec:Motivating-facts} of the main text reports estimates based on the leave-one-out connected set of workers and firms. Note also that all numbers reported here are with respect to the plug-in estimators of the $R^{2}$ and the RMSE. However, Section \ref{subsec:Motivating-facts} presented leave-one-out corrected estimates of variance components, which leads to small changes relative to the plug-in estimates.} %
+%
+
+
+\begin{table}[!htb]
+  %
+  \centering
+  \caption{Explained wage dispersion when (not) controlling for observable and unobservable heterogeneity\label{tab:edu_var_decomposition}}
+  %
+  \pretabvspace
+  %
+  \input{_tables/tabA4.tex}
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} This table shows the coefficient of determination ($R^2$) and root mean square error (RMSE) for different specifications that project log wages on various controls: observable worker characteristics (column 1), observable worker characteristics and firm dummies (column 2), and observable worker characteristics and worker dummies (column 3). Observable worker characteristics include education-specific age dummies, education-specific year dummies, hours dummies, and occupation dummies. Note that the number of observations vary across specifications because we drop singletons based on combinations of the controls included in each specification.
+      \emph{\scriptsize{}Source:} RAIS, 1994--1998.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{table}

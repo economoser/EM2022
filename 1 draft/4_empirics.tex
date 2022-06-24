@@ -1,0 +1,212 @@
+% !TEX root = EIMW2022.tex
+
+\section{Cross-sectional heterogeneity and the minimum wage\label{SECTION: Empirics}}
+
+While the correlation between the minimum wage and aggregate wage inequality documented in the previous section is striking, we caution against interpreting this pattern as causal. For example, the changes in wage inequality over this period might have been driven by simultaneous changes in macroeconomic conditions or secular trends in the wage distribution unrelated to Brazil's federal minimum wage. We address this simultaneity problem by exploiting spatial variation in the bindingness of the federal minimum wage across states in Brazil, building on the seminal econometric framework by \citet{Lee1999} and the recent contribution by \citet{Autor2016}. This approach allows us to filter out changes in national macroeconomic conditions and secular trends. In this sense, the fact that inequality decreased in Brazil over this period is neither necessary nor sufficient for our conclusions regarding the effects of the minimum wage on wage inequality.
+
+
+\subsection{Motivating evidence on state-level heterogeneity}
+
+To motivate our econometric analysis, we start by noting that wage inequality---while declining overall during this period---fell disproportionately in initially lower-income regions for which the federal minimum wage was relatively more binding. Figure \ref{fig:Inequality_evolution} plots normalized wage inequality measures between 1996 and 2018 for the three lowest-income states and three highest-income states in Brazil in 1996.%
+%
+\footnote{The three low-income states are Maranh{\~{a}}o, Piau{\'{i}}, and Para{\'{i}}ba, while the three high-income states are Rio de Janeiro, S{\~{a}}o Paulo, and Distrito Federal.} %
+%
+Panel \subref{subfig:Inequality_evolution_A} shows that the variance of log wages drops by more than half in initially low-income states, but by less than one-fifth in initially high-income states. Panel \subref{subfig:Inequality_evolution_B} shows that lower-tail inequality drops especially in initially low-income states, with the P50--P10 and P50--P25 for this group declining by 50 and 40 percent, respectively, but by markedly less for initially high-income states. In contrast, upper-tail inequality, measured by the P75--P50 or the P90--P50, falls only in initially low-income states, as shown in panel \subref{subfig:Inequality_evolution_C}.%
+%
+\footnote{Appendix \ref{app_subsection:lee_regressions} shows that the inverse relationship between the effective bindingness of the minimum wage and wage inequality generalizes to the full set of states.} %
+%
+
+These empirical patterns yield three take-aways. First, Brazil's inequality decline was due to factors that matter more at lower income levels. Second, the inequality decline was associated with compression particularly in the bottom of the wage distribution. Third, the compression in the wage distribution reaches from the bottom to above the median of the wage distribution. This motivates our study of the minimum wage.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:Inequality_evolution}Evolution of wage inequality across rich and poor states}
+  %
+  \prefigvspace
+  %
+  \subfloat[Overall inequality\label{subfig:Inequality_evolution_A}]{%
+   \includegraphics[width=0.33\columnwidth]{_figures/fig3A.pdf}% _figures/comp_sd_1996_2018.pdf
+    %
+  }
+  \subfloat[Lower-tail inequality\label{subfig:Inequality_evolution_B}]{%
+   \includegraphics[width=0.33\columnwidth]{_figures/fig3B.pdf}% _figures/comp_percentiles_bottom_1996_2018.pdf
+    %
+  }
+  \subfloat[Upper-tail inequality\label{subfig:Inequality_evolution_C}]{%
+   \includegraphics[width=0.33\columnwidth]{_figures/fig3C.pdf}% _figures/comp_percentiles_top_1996_2018.pdf
+    %
+  }%
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}For this figure, we assign the three lowest-income states and three highest-income
+      states states in Brazil in 1996 into a ``low income'' group and a ``high income'' group, respectively. The three low-income states are Maranh{\~{a}}o, Piau{\'{i}}, and Para{\'{i}}ba, while the three high-income states are Rio de Janeiro, S{\~{a}}o Paulo, and Distrito Federal. The three panels then plot various wage inequality measures by state group between 1996 and 2018, normalized to $1.0$ in 1996.
+      panel \subref{subfig:Inequality_evolution_A} shows the variance
+      of log wages, panel \subref{subfig:Inequality_evolution_B} shows
+      lower-tail percentile ratios (P50/P10 and P50/P25) of log wages, and panel \subref{subfig:Inequality_evolution_C}
+      shows upper-tail percentile ratios (P75/P50 and P90/P50) of log wages. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\subsection{Econometric framework\label{subsec:Spillover-effects-identified}}
+
+To correlate the minimum wage with wage inequality, we follow \citet{Lee1999} and \citet{Autor2016} in exploiting heterogeneous exposure across states that differ in their bindingness with respect to Brazil's federal minimum wage. To this end, we define the \emph{Kaitz-$p$ index} for state $s$ in year $t$ as $kaitz_{st}(p) \equiv \log w_{t}^{min} - \log w_{st}^{\text{P}p}$. That is, the Kaitz-$p$ index is the log difference between the federal minimum wage prevailing in year $t$, $w_{t}^{min}$, and the $p$th percentile of the log wage distribution of state $s$ in year $t$, $w_{st}^{\text{P}p}$.%
+%
+\footnote{Figure \ref{fig: kaitz} in Appendix \ref{subsec:kaitz-evolution} shows that variation across Brazilian states in the Kaitz-$p$ index, for $p \in \{ 50, 90 \}$, is large initially and decreases as the minimum wage increases, while approximately preserving the ranking of states over time.} %
+%
+We are interested in how various inequality measures at the state-year level covary with the Kaitz-$p$ index, for high enough $p$ such that the $p$th percentile of the wage distribution is not (directly or indirectly) affected by the minimum wage. To assess this, we regress outcome variable $y_{st}(p';p)$ specific to wage percentile $p'$ with respect to some base percentile $p$ in state $s$ and year $t$ on the Kaitz-$p$ index, using the same base percentile $p$, and state-year controls:
+%
+\begin{align}
+  y_{st}(p';p) &= \sum_{n=1}^{N} \beta_{n}(p') \times kaitz_{st}(p)^{n} + \gamma_{s}(p') + \delta_{s}(p') \times t + \varepsilon_{st}(p'),\label{eq:Lee}
+\end{align}
+%
+where $y_{st}(p';p)$ may stand in for the log ratio of wage percentile $p'$ over wage percentile $p$ in state $s$ and year $t$, $N$ denotes the order of the polynomial in the Kaitz-$p$ index, $\beta_{n}(p')$ is the percentile $p'$-specific coefficient on the $n$th power of the Kaitz-$p$ index, $\gamma_{s}(p')$ is a set of state dummies for each percentile $p'$, and $\delta_{s}(p') \times t$ is a set of state-specific linear time trends for each percentile $p'$. Finally, $\varepsilon_{st}(p')$ is a percentile $p'$-specific error term, which we assume satisfies the strict exogeneity condition $\mathbb{E}[\varepsilon_{st}(p')|kaitz_{st}(p),\ldots,kaitz_{st}(p)^{n},\gamma_{s}(p'), \delta_{s}(p') \times t]=0$.
+
+After estimating equation \eqref{eq:Lee} separately for each wage percentile $p'$ using a baseline percentile $p$, we estimate the marginal effect of the minimum wage throughout the wage distribution,
+%
+\begin{equation}
+    \rho(p',p) \equiv \sum_{n=1}^{N}n\beta_{n}(p') \times kaitz_{st}(p)^{n-1},\label{eq:Lee_marginal_effect}
+\end{equation}
+%
+evaluated at the worker-weighted median value of the Kaitz-$p$ index across states and years. Allowing for polynomials of order $N \ge 2$ is important to capture the nonlinear effects of the minimum wage as it becomes more binding. After trying different values, we set $N=2$.%
+%
+\footnote{Using polynomials of order $N>2$ yields results that are substantially the same as those presented below.} %
+%
+
+We first consider as outcome variables in equation \eqref{eq:Lee} a set of global or local wage inequality measures. To capture the effects of the minimum wage on global wage inequality, we consider a variant of equation \eqref{eq:Lee} that uses the standard deviation of log wages as the dependent variable. To capture the effects of the minimum wage on local wage inequality, we use---for various values of $p' \in \{ 10, 15, \ldots, 90 \}$---the log ratio between wage percentile $p'$ and a base percentile $p$, so that $y_{st}(p';p)=\log [ w_{st}(p') / w_{st}(p) ]$. Here, $p$ is the same percentile as in the Kaitz-$p$ index. Ideally, $p$ would be chosen high enough so as to be (directly and indirectly) unaffected by the minimum wage. Prior studies of the minimum wage in the U.S. context have used $p=50$---i.e., the median---while appealing to the fact that, ex-post, their findings suggest insignificant spillover effects at or above that point in the wage distribution. For Brazil, where the minimum wage is more binding than in the U.S., we report results for the same value of $p=50$ and consistently find a statistically significant correlation with outcomes above the median of the wage distribution.%
+%
+\footnote{See Appendix \ref{app_subsec:comparison_Brazil_US} for a comparison of the relative bindingness of the minimum wage, as proxied by left-tail wage inequality, between Brazil and the U.S.} %
+%
+Therefore, we also report results for an alternative, preferred normalization using $p=90$.
+
+When analyzing the correlation between the minimum wage and log wage percentile ratios, the inclusion of the $p$th wage percentile in both the dependent and the independent variable may induce a spurious correlation that results in biased estimates of the coefficient $\beta_{n}(p')$, and thus the marginal effect $\rho(p',p)$, in the presence of measurement error or other transitory shocks \citep{Autor2016}. While measurement error is plausibly a lesser concern in large administrative data such as ours, we address this issue by implementing a variant of the solution proposed by \citet{Autor2016}. Specifically, we adopt an instrumental variables (IV) strategy that predicts the Kaitz-$p$ index and its square based on an instrument set that consists of the log real statutory minimum wage, its square, and the log real statutory minimum wage interacted with the mean of the log real $p$th percentile of the wage distribution for each state over the full sample period. The motivation for this instrument set is that the current level of the statutory minimum wage in relation to the long-term average income level within a state affects the concurrent bindingness of the minimum wage (i.e., instrument relevance) and has an effect on concurrent wage inequality only through its effect on the concurrent bindingness of the minimum wage (i.e., the exclusion restriction) by being essentially decoupled from transitory wage fluctuations. Since we study states' differential exposure to the federal minimum wage, rather than state-level minimum wages that are more likely to be endogenous to local economic conditions, we include as controls in our IV specification state-specific linear time trends instead of a set of year dummies as in \citet{Autor2016}.
+
+
+\paragraph{Result 1: Effects of the minimum wage on wage inequality.}
+
+Figure \ref{fig:Lee_regression} shows the results obtained from estimating equation \eqref{eq:Lee} over the sample period from 1996 to 2018. We report results for our baseline specifications with state fixed effects and state-specific linear time trends, estimated via OLS in levels across Brazil's 27 states, with the base percentile being either $p=50$ (panel \subref{fig:Lee_regression_A}) or $p=90$ (panel \subref{fig:Lee_regression_B}). The shaded areas represent 99 percent confidence intervals based on regular (i.e., not clustered) standard errors. In each panel, we report the estimated marginal effect on the standard deviation of log wages (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to the base wage $p$.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:Lee_regression}Estimated minimum wage effects on the distribution of wages}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{fig:Lee_regression_A}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/fig4A.pdf}% _figures/baseline_p50_1996_2018.pdf
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{fig:Lee_regression_B}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/fig4B.pdf}% _figures/baseline_p90_1996_2018.pdf
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimated marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows the results from a baseline specification, with estimated marginal effects shown as black circles connected by lines and standard error bands shown as bars or shaded areas. The baseline specification includes state fixed effects in addition to state-specific linear time trends and is estimated using ordinary least squares (OLS). Each value on the horizontal axis corresponds to a separate regression for a specific dependent variable, which can be either the standard deviation of log wages (``St.d.'' on the x-axis) or wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$. Panel \subref{fig:Lee_regression_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panels \subref{fig:Lee_regression_B} uses the 90th percentile as the base wage (i.e., $p=90$). Both panels are estimated across Brazil's 27 states. The bars and four shaded areas represent 99 percent confidence intervals based on regular (i.e., not clustered) standard errors. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+The results show a strong correlation between the minimum wage and inequality throughout the wage distribution. Using the median as a base percentile (panel \subref{fig:Lee_regression_A}), the estimated marginal effects of the minimum wage are monotonically decreasing between the 10th and the 75th percentile, and statistically significant at the one percent level throughout. The marginal effects are also tightly estimated.
+
+The statistically significant correlation between the minimum wage and inequality outcomes above the median motivates our alternative normalization using the 90th wage percentile (panel \subref{fig:Lee_regression_B}). Inspecting these results, we estimate monotonically decreasing and statistically significant marginal effects of the minimum wage up to the 90th percentile. Again, the marginal effects are tightly estimated.
+
+In terms of the correlation between the minimum wage and the standard deviation of log wages, our estimates across the two base wages in panels \subref{fig:Lee_regression_A} and \subref{fig:Lee_regression_B} of Figure \ref{fig:Lee_regression} yield consistent results, with an estimated semi-elasticity of around -0.20. This means that a one percent increase in the nominal minimum wage, holding fixed the median 90th percentile of wages, is associated with a decrease in the standard deviation of wages of around 20 log points. Although caution is warranted when extrapolating from cross-sectional regressions to aggregate trends, these estimates suggest a decline in the standard deviation of wages of around 11.7 log points, compared to the actual decline in the standard deviation of wages of 19.3 log points in the raw data, in response to the 58.6 log point labor productivity-adjusted increase in the minimum wage seen in Brazil between 1996 and 2018.
+
+We conduct a battery of robustness checks and consistently find that spillovers reach up to or above the 75th percentile of the earnings distribution. This is significantly higher than previous evidence on the reach of minimum wage spillovers in the US due to \citet{Lee1999}, who finds significant effects up to the median of the wage distribution, and \citet{Autor2016}, who find spillovers in the lowest quintile of the wage distribution. Importantly, \citet{Autor2016}'s concern that measurement error may bias estimates of the effect of the minimum wage does not seem to drive our finding, as Appendix \ref{app_subsec_alt_specs} shows by presenting similar results from the IV specification described above.%
+%
+\footnote{Appendix \ref{app_subsec_alt_specs} also shows similar results from OLS and IV specifications in differences, though with significantly larger standard error bounds. In Appendix \ref{app_subsec_alt_controls}, we find similar results using alternative sets of controls, including only state fixed effects, only year fixed effects, state and year fixed effects, and state and year fixed effects in addition to state-specific linear trends. Appendix \ref{app_subsec_alt_periods} shows that these results are not unique to the 1996--2018 period we study, since we find similar results for the period 1985--2007 and the complete set of years 1985--2018. Notably, spillover effects are not markedly stronger during the early period of 1985--1995, though the right tail of our estimates suggests that there were significant transitory state-level shocks not related to the minimum wage during this high-inflation period. Appendix \ref{app_subsec:lee_regressions_trends} shows similarly strong spillover effects when controlling for state-specific quadratic or cubic time trends. Although the number of states (27) falls below conventional thresholds for clustering \citep{CameronMiller2015}, Appendix \ref{app_subsec:lee_regressions_cluster} also presents results with standard errors clustered at the state level and a separate specification estimated at the level of mesoregions (of which there are 137) with standard errors clustered at the mesoregion level. Finally, in Appendix \ref{app_subsec:lee_regressions_haanwinckel} we show that similar insights are obtained from a set of specifications and controls replicating those in complementary work by \citet{Haanwinckel2020}, the relation to which we discuss in some detail in Appendix \ref{app_subsec:lee_regressions_haanwinckel}.} %
+%
+In this way, our results complement recent evidence by \citet{FortinLemieuxLloyd2021} that relies on a method robust to the type of measurement error problem described in \citet{Autor2016} and finds spillover effects similar to those of \citet{Lee1999} for the same period of the 1980s in the US.
+
+Our robust finding of a correlation between the minimum wage and inequality outcomes up to the 90th percentile of the wage distribution may seem surprising. For comparison, \citet{Autor2016} show spillovers up to the 20th percentile of the wage distribution in the U.S. In light of this, we make five observations. First, our large-scale administrative data plausibly admit less measurement error than the CPS, alleviating concerns about bias in the estimates of $\beta_{n}(p)$ in equation \eqref{eq:Lee} and allowing us to measure spillover effects with greater accuracy than previously possible. %
+Second, the minimum wage in Brazil during this period was more binding compared to that in the U.S. over the last decades \citep{Autor2016}, which due to the nonlinear nature of spillover effects is expected to lead to greater effects throughout the wage distribution.%
+%
+\footnote{Appendix \ref{app_subsec:comparison_Brazil_US} shows that between 1996 and 2018, the minimum wage in Brazil relative to that in the U.S. has gone from less binding to significantly more binding.} %
+%
+Third, while a relatively small fraction of Brazilian workers earn the minimum wage in any given year during our sample period, we find that a significant fraction of workers throughout the wage distribution ever (currently, in the past, or in the future) earn the minimum wage during our sample period. This may suggest that the minimum wage in Brazil acts as an important stepping stone, even for workers that eventually find themselves high up in the wage distribution.%
+%
+\footnote{Appendix \ref{app:mw_spike} shows that a relatively small fraction of Brazilian workers have wages exactly equal to, less than, or around the minimum wage at any given point in time between 1996 and 2018. Appendix \ref{appendix:who_earns_the_mw} studies characteristics of minimum wage earners.} %
+%
+Fourth, the minimum wage in Brazil is particularly salient given Brazil's volatile economic history. While indexation of wages to the minimum wage is not allowed by Brazilian labor laws and not supported by the government, the minimum wage still serves as an important reference point in wage setting mechanisms \citep{NeriMoura2006}.%
+%
+\footnote{Our model in Section \ref{SECTION: Model} rationalizes the view of the minimum wage as a reference point as an equilibrium outcome due to frictional inter-firm competition for workers. In the data, like in our model, the link between the minimum wage and the wage distribution is imperfect---not all wages move one-for-one with the minimum wage. Thus, the wage distribution compresses as the minimum wage is increased. Appendix \ref{app_subsec:comparison_nominal_multiples} compares the distribution of (changes in) wages in nominal values and in multiples of the current minimum wage.} %
+%
+Fifth and finally, compared to the U.S., Brazil's workforce is heavily skewed toward low-skill workers as measured by educational attainment. It is around the 75th--90th percentile of the wage distribution where there is a sharp increase in the share of workers with either a high school or a college degree, and also where (log) wages increase sharply across wage quantiles.%
+%
+\footnote{See Appendix \ref{subsec:Summary-statistics} for details.} %
+%
+Therefore, we would naturally expect the minimum wage to have a greater impact among lower-skill workers, which make up a relatively larger population share in Brazil compared to the U.S.
+
+
+\paragraph{Result 2: Effects of the minimum wage on employment.}
+
+So far, we have focused on the correlation between the minimum wage and inequality. We now extend our regression framework to investigate the link between the minimum wage and employment outcomes---including formal and informal sectors---over our period of study. To this end, we supplement the administrative data from RAIS with household survey data from PNAD and PME, based on which we estimate variants of the specification in equation \eqref{eq:Lee} with a dependent variable $y_{st}$ that captures employment outcomes at the region-year level.
+%
+\footnote{A region corresponds to Brazil's 27 states in RAIS and PNAD and to one of the six largest metropolitan areas in PME.} %
+%
+For simplicity, we present results based on specifications that use the Kaitz-50 index, though we obtain similar results when using the Kaitz-90 index.
+
+Consistent with previous evidence by \citet{Lemos2009}, results from the PNAD survey data in panel A in Table \ref{tab:employment_effects} show that the minimum wage has precisely estimated zero effects on the population size, labor force participation rate, employment rate, and formal employment share, all of which are insignificant at conventional levels. Specifically, there is little evidence of cross-state differences in population or labor force dynamics linked to the minimum wage---if anything, the rise in the minimum wage is associated with a rise in log population size that is statistically significant only at the ten percent level. Results from the PME data in panel B show small estimated marginal effects of the minimum wage on transition rates from nonformal to formal as well as from formal to nonformal employment. While both point estimates are negative, they are also statistically insignificant at conventional levels.%
+%
+\footnote{An increase in the minimum wage may affect both formal and informal employment, as studied by \citet{Jales2018}. Unfortunately, the condition of no spillover effects imposed by \citet{Jales2018} does not hold in our context.}
+%
+Finally, panel C shows the estimated effects of the minimum wage on other labor market outcomes in RAIS. Mean hours worked show a significant correlation of mild magnitude with the relative bindingness of the minimum wage, suggesting that the intensive margin of hours adjustments in response to the minimum wage \citep{Doppelt2019} is not of prime importance in the Brazilian context. Mean firm size correlates strongly positively with the minimum wage, consistent with the idea that the minimum wage induces small firms to shrink or exit in favor of larger competitors. The estimated effect on the probability of remaining employed at the same firm until next year is negative and significant, suggesting that some jobs are destroyed as the minimum wage increases. However, together with our findings of constant labor force participation, employment, and formality rates in response to the minimum wage increase, this suggests that the effect of the minimum wage is primarily to reallocate workers across firms rather than a reduction in overall employment.%
+%
+\footnote{See also Appendix \ref{sec:Hours} for a more detailed analysis of the correlation between the minimum wage and hours worked.} %
+%
+
+\begin{table}[!htb]
+  %
+  \centering
+  \caption{\label{tab:employment_effects}Effects of the minimum wage on employment worker transitions}
+  %
+  \pretabvspace
+  %
+  \include{_tables/tab3.tex}
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} This table shows the predicted marginal
+      effects with standard errors in parentheses evaluated at the worker-weighted
+      mean across Brazil's 27 states. Each cell corresponds to the estimated coefficient and standard error from one regression with the relevant dependent variable (row). The underlying regressions are variants of equation \eqref{eq:Lee} including state fixed effects and state-specific linear time trends. %
+      \emph{\scriptsize{}Source: } PNAD, 1996--2012, PME, 2002--2012, and RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{table}
+
+
+
+
+\subsection{A call for an equilibrium model\label{subsec:data_to_model}}
+
+The above findings suggest that Brazil's minimum wage has had far-reaching effects on the wage distribution. That the inequality-decreasing effects of the minimum wage are so large may seem surprising in light of past findings of smaller effects in the U.S. by \citet{Lee1999} and \citet{Autor2016}. Yet there exists little theoretical guidance on how strong we should expect spillover effects of the minimum wage to be and at what cost they may come. Furthermore, reduced-form estimates based on cross-sectional variation recover only the relative, but not the absolute, effects of the minimum wage---a problem that is compounded if spillovers are present throughout most of the wage distribution.%
+%
+\footnote{This is a variant of the ``missing intercept'' problem highlighted in a recent micro-to-macro literature \citep{NakamuraSteinsson2018}.} %
+%
+Finally, there may remain concerns about confounding factors not controlled for in our econometric analysis, such as the concurrent rollout of social security programs and the expansion of education in Brazil.
+
+To address these issues, we develop and estimate an equilibrium model of the Brazilian labor market subject to a minimum wage. Such a model, while based on certain assumptions, can lend additional credibility to our reduced-form estimates, which rely on a very different set of assumptions. Another benefit of a structural model is that it can aggregate the effects of the minimum wage estimated based on cross-sectional variation in the data, while shedding light on the mechanisms by which the minimum wage impacts the labor market through counterfactual simulations.

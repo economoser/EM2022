@@ -1,0 +1,309 @@
+% !TEX root = EIMW2022.tex
+
+\section{Estimation Appendix\label{APPENDIX: Estimation}}
+
+This section provides additional details on the model estimation that build on the material presented in Section \ref{SECTION: Estimation}, including subsections on %
+%
+the mean-to-min wage ratio in the estimated model (Appendix \ref{app_subsec:mean_to_min}), %
+%
+the implied parameter estimates and additional model fit (Appendix \ref{app_subsec:model_fit}), %
+%
+details of the identification (Appendix \ref{app_subsec:identification}), %
+%
+additional model validation (Appendix \ref{app_subsec:model_validation}), %
+%
+and a discussion of the structure of the unbalanced panel (Appendix \ref{app_subsec:survival_rates}).
+
+
+
+
+\clearpage
+\subsection{Mean-to-min wage ratio in the estimated model\label{app_subsec:mean_to_min}}
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Mean-to-min wage ratio in the estimated model\label{fig:mean_to_min}}
+  %
+  \prefigvspace
+  %
+  \includegraphics[width=.40\columnwidth]{_figures/figD1.png} % _figures/Model_MeanMin.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Figure shows the mean-to-min wage ratio $\overline{w}(a)/w^{\ast}(a)$, as defined in \citetappendix{Hornstein2011_appendix}, from our estimated model. All statistics are computed from model solution before applying the estimated measurement error. The mean wage $\overline{w}(a)$ is defined as the arithmetic mean over the realized distribution of wages in levels for a given ability type $a$. The min wage $w^{\ast}(a)$ is defined as the lowest accepted wage in levels by workers of ability $a$, which might be either the statutory minimum wage $w^{min}$ or the workers' reservation wage if the latter exceeds the statutory minimum wage. %
+      \emph{\scriptsize{}Source: } Model and RAIS, 1994--1998.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Implied parameter estimates and additional model fit\label{app_subsec:model_fit}}
+
+This section discusses additional details regarding the implied parameter estimates and model fit. This follows up on the results presented in Section \ref{subsec:parameter_estimates_fit}, specifically Table \ref{table: estimates} and Figure \ref{table: estimates}, of the main text.
+
+Figure \ref{fig:implied_parameters} shows the implied parameter values for the separation rates, $\delta(a,s>0)$ and $\delta(a,s=0)$, relative on-the-job search efficiency, $s(a)$, and reservation piece rate, $r(a)$, across the distribution of worker ability, $a$, based on the estimates presented in Table \ref{table: estimates} of the main text.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Implied parameter estimates\label{fig:implied_parameters}}
+  %
+  \prefigvspace
+  %
+  \subfloat[Implied separation rate\label{fig:implied_parameters_a}]{\includegraphics[trim={.0in .0in 0in .3in},clip,width=.33\columnwidth]{_figures/figD2A.png}}% _figures/Model_delta.png
+  \subfloat[Implied rel. on-the-job search eff.\label{fig:implied_parameters_b}]{\includegraphics[trim={.0in .0in 0in .3in},clip,width=.33\columnwidth]{_figures/figD2B.png}}% _figures/Model_phi.png
+  \subfloat[Implied reservation wage\label{fig:implied_parameters_c}]{\includegraphics[trim={.0in .0in 0in .3in},clip,width=.33\columnwidth]{_figures/figD2C.png}}% _figures/Model_r.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}This figure shows the implied parameter values of the separation rates, $\delta(a,s>0)$ and $\delta(a,s=0)$, relative on-the-job search efficiency, $s(a)$, and reservation piece rate, $r(a)$, across the distribution of worker ability, $a$, based on the estimates in Table \ref{table: estimates}. %
+      \emph{\scriptsize{}Source: } Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+Figure \ref{figure: model fit 2} illustrates the model's ability to replicate labor market stocks and flows by AKM worker fixed effects. Panel \subref{figure: model fit 2a} shows that the model matches well the lower EN rate among higher paid workers, as a result of the decline in the separation rate, $\delta(a,s)$, with worker ability. Panel \subref{figure: model fit 2b} highlights that we understate somewhat the level of job-to-job mobility as well as its gradient with AKM worker fixed effect. Although underlying search efficiency $s(a)$ rises monotonically with worker ability and higher ability workers are less likely to be minimum wage workers, the resulting job-to-job rate is not monotone in AKM worker fixed effects. The reason is that the separation rate $\delta(a,s)$ declines in ability, such that higher ability workers are higher up the job ladder. Since workers higher up the job ladder are less likely to accept an outside offer, the realized job-to-job rate is non-monotone in ability. Panel \subref{figure: model fit 2c} shows that the model matches well the nonemployment rate by AKM worker fixed effect decile. Although we do not target this in estimation---in fact we impose the same job finding rate $\lambda$ across worker types---the model matches well the empirical pattern, because the separation rate, $\delta(a,s)$, declines with worker ability. Panel \subref{figure: model fit 2d} shows that the model matches well the fifth percentile of wages by AKM worker fixed effect decile.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Worker outcomes by AKM person FE, model vs. data\label{figure: model fit 2}}
+  %
+  \prefigvspace
+  %
+  \subfloat[EN rate\label{figure: model fit 2a}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD3A.png}}% _figures/ModelFit_en.png
+  \subfloat[Job-to-job rate\label{figure: model fit 2b}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD3B.png}}% _figures/ModelFit_ee.png
+  %
+  \\
+  %
+  \subfloat[Nonemployment rate\label{figure: model fit 2c}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD3C.png}}% _figures/ModelFit_u.png
+  \subfloat[5th percentile of wages\label{figure: model fit 2d}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD3D.png}}% _figures/ModelFit_wage_p5.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Panel A shows the share of employed workers who are nonemployed in the subsequent month. Employment refers to formal sector employment in the data; nonemployment is everything else (unemployment, not in the labor force and informal sector employment). Panel B shows the share of employed workers who are employed at a different main employer in the subsequent month. Panel C shows the share of population that is not working in the formal sector. Panel D shows the 5th percentile of log wages. All panels are by decile of AKM person fixed effects based on a regression of log monthly earnings on person fixed effects and firm fixed effects. Model and data sample selection and variable construction are identical---see text for details. %
+      \emph{\scriptsize{}Source: } Model and RAIS, 1994--1998.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Details of the identification\label{app_subsec:identification}}
+
+This subsection provides a further discussion of identification of the 12 internally estimated parameters of our model. We consider two exercises. The first plots how the minimum distance objective function changes as each parameter varies around its estimated value, holding all other parameters fixed at their estimated values. This exercise is local in nature in the sense that an envelope condition ensures that the other parameters remain optimal as one parameter varies around its optimum.
+
+Figure \ref{figure: identification 2} provides the results. Evidently, 11 of the 12 internally estimated parameters are well informed by the joint information contained in the targeted moments. The exception is the intercept in the reservation wage, $r_0$, for which the minimum distance is relatively flatter compared to other parameters. For the main objective of this paper, we believe that this is a somewhat minor issue. The reason is that the impact of the minimum wage on both inequality and employment is essentially invariant to the particular value of this parameter, as we highlight further in Appendix \ref{app_subsec:effects_dependence_on_parameters}.
+
+The second exercise plots how an individual parameter moves its particularly informative moment. Figure \ref{figure: identification 3} plots those parameters that are particularly informed by a single moment against its chosen moment as the parameter varies around its estimated value (between 25 and 300 percent of the estimated value), holding the other parameters fixed at their estimated values. Reassuringly, each parameter distinctly moves its particularly informative moment, suggesting that these parameters are well informed by our choice of targets. In the interest of space, we focus this exercise primarily on those parameters that are particularly informed by a single moment. Nevertheless, for reference we also show in Figure \ref{figure: identification 4} how the overall EN and EE rates move as we change the intercept in the separation rate, $\delta_0$, and the intercept in relative search efficiency, $\phi_0$, respectively. Note, though, that these two moments are not targeted in estimation, as we target the EN (EE) rate \textit{by decile} of AKM worker fixed effect deciles for $\delta_0$ ($\phi_0$) and $\delta_1$ ($\phi_1$) jointly. These two parameters move the overall mobility rates in the expected direction.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Minimum distance, model\label{figure: identification 1}}
+  %
+  \prefigvspace
+  %
+  \subfloat[$\mu$\label{figure: identification 1a}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD4A.png}}% _figures/Jacobian_mu.png
+  \subfloat[$\sigma$\label{figure: identification 1b}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD4B.png}}% _figures/Jacobian_sigma.png
+  %
+  \\
+  %
+  \subfloat[$\zeta$\label{figure: identification 1c}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD4C.png}}% _figures/Jacobian_zeta.png
+  \subfloat[$\eta$\label{figure: identification 1d}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD4D.png}}% _figures/Jacobian_eta.png
+  %
+  \\
+  %
+    \subfloat[$\varepsilon$\label{figure: identification 1e}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD4E.png}}% _figures/Jacobian_error.png
+  \subfloat[$\delta_0$\label{figure: identification 1f}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD4F.png}}% _figures/Jacobian_delta0.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Impact on minimum distance objective function of varying one parameter at a time, holding all other parameters fixed at their estimated values. %
+      \emph{\scriptsize{}Source: } Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Minimum distance, model (cont'd)\label{figure: identification 2}}
+  %
+  \prefigvspace
+  %
+  \subfloat[$\delta_1$\label{figure: identification 2a}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD5A.png}}% _figures/Jacobian_delta1.png
+  \subfloat[$\phi_0$\label{figure: identification 2b}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD5B.png}}% _figures/Jacobian_phi0.png
+  %
+  \\
+  %
+  \subfloat[$\phi_1$\label{figure: identification 2c}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD5C.png}}% _figures/Jacobian_phi1.png
+  \subfloat[$r_0$\label{figure: identification 2d}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD5D.png}}% _figures/Jacobian_r0.png
+  %
+  \\
+  %
+    \subfloat[$r_1$\label{figure: identification 2e}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD5E.png}}% _figures/Jacobian_r1.png
+  \subfloat[$\pi$\label{figure: identification 2f}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD5F.png}}% _figures/Jacobian_pi.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Impact on minimum distance objective function of varying one parameter at a time, holding all other parameters fixed at their estimated values. %
+      \emph{\scriptsize{}Source: } Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Targeted moments versus parameters, model\label{figure: identification 3}}
+  %
+  \prefigvspace
+  %
+  \subfloat[$\mu$\label{figure: identification 3a}]{\includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD6A.png}}% _figures/Jacobian_Moment_mu.png
+  \subfloat[$\zeta$\label{figure: identification 3b}]{\includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD6B.png}}% _figures/Jacobian_Moment_zeta.png
+  %
+  \\
+  %
+  \subfloat[$\eta$\label{figure: identification 3c}]{\includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD6C.png}}% _figures/Jacobian_Moment_eta.png
+  \subfloat[$\varepsilon$\label{figure: identification 3d}]{\includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD6D.png}}% _figures/Jacobian_Moment_error.png
+  %
+  \\
+  %
+  \subfloat[$\pi$\label{figure: identification 3e}]{\includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD6E.png}}% _figures/Jacobian_Moment_pi.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Impact on an associated target moment of varying one parameter at a time, holding all other parameters fixed at their estimated values. %
+      \emph{\scriptsize{}Source: } Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Additional moments versus parameters, model\label{figure: identification 4}}
+  %
+  \prefigvspace
+  %
+  \subfloat[$\delta_0$\label{figure: identification 4a}]{\includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD7A.png}}% _figures/Jacobian_Moment_delta0.png
+  \subfloat[$\phi_0$\label{figure: identification 4b}]{\includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD7B.png}}% _figures/Jacobian_Moment_phi0.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Impact on an associated target moment of varying one parameter at a time, holding all other parameters fixed at their estimated values. %
+      \emph{\scriptsize{}Source: } Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Additional model validation\label{app_subsec:model_validation}}
+
+Figure \ref{figure: model validation} contrasts some additional predictions of the model that were not explicitly targeted with the data. Panel \subref{figure: model validation a} shows that dispersion in (log) pay is larger among high paid workers, in both the model and data. This pattern is driven by the top deciles having greater dispersion in underlying worker ability, $a$, as well as greater dispersion in pay conditional on ability among high skilled workers. The latter is, in turn, due to the fact that the minimum wage does not constrain pay at the top of the ability distribution. Panel \subref{figure: model validation b} plots the average AKM firm fixed effect by decile of AKM worker fixed effects. Higher paid workers work for higher paying firms, in both the model and data. The reason is that more skilled workers climb the job ladder faster and fall off it less frequently. At the bottom of the worker pay distribution, however, the pattern is reversed, because the minimum wage makes matches between the lowest skilled workers and the lowest productivity firms unviable.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Model validation across AKM person FE deciles, model versus data \label{figure: model validation}}
+  %
+  \prefigvspace
+  %
+  \subfloat[Variance of log wages\label{figure: model validation a}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD8A.png}}% _figures/ModelValidation_wage_var.png
+  \subfloat[Mean AKM firm FE\label{figure: model validation b}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/figD8B.png}}% _figures/ModelValidation_fe_mean.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Figure shows the stimated impact of a 57.7 log point increase in the productivity adjusted real minimum wage. Workers are binned by decile of AKM worker fixed effect. Firms are binned by (employment-unweighted) AKM firm fixed effect decile. AKM regression is estimated on model-simulated monthly data aggregated to the annual level following an identical sample selection and variable construction methodology as in the data. Panel \subref{figure: model validation a} shows the impact on the variance of log wages. Panel \subref{figure: model validation b} shows the impact on the mean of AKM firm fixed effects. %
+      \emph{\scriptsize{}Source: } Model and RAIS, 1994--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Structure of the unbalanced panel\label{app_subsec:survival_rates}}
+
+A salient feature of the formal-sector RAIS data is that both workers and firms do not appear in a balanced panel. Our estimated model rationalizes this through stochastic worker separation rates into nonemployment and stochastic job findings rates from nonemployment. Our estimation procedure relies on an indirect inference logic and the AKM wage equation, which we use as an auxiliary model, is estimated on finite samples---both in the data and on the model-simulated data. Therefore, it is interesting to know to what extent panel structure in the data is replicated by simulations from our estimated model.
+
+Table \ref{tab:survival_rates} compares worker and firm survival rates in the data for two periods, the estimation period 1994--1998 (panel A) and the final period 2010--2014 (panel B), as well as in the simulated data from our estimated model (panel C), which we fit to a separate set of moments from the estimation period 1994--1998. Specifically, we consider two concepts of worker or firm survival rates. First, we compute the survival rates of a cohort of workers or firms observed in the first year of the five-year time window. We report the share of that cohort of workers or firms who survive for each number of consecutive years, including the first one, during this time window in the columns labeled ``Cohort.'' Second, we compute the share of all workers or firms who are observed for each of one, two, three, four, or five years in the data in the columns labeled ``Pooled.'' The two statistics are related but distinct because---in the real world like in our simulated model---workers may be observed for the first time after the first year of our data time window.
+
+A few points are worth noting about the results in Table \ref{tab:survival_rates}. Cohort survival rates are concentrated around five years---the complete panel---both for workers and for firms, as well as in the two data periods and in the model. In comparison, pooled survival rates are more spread out. The model matches very well the empirical worker cohort survival rates. At the same time, the model overpredicts the cohort survival rates of firms. Vis-a-vis the data, the model also underpredicts the pooled survival rates of workers but does a very good job at capturing that of firms. The model fit is not perfect, which may be not surprising given that there were no free parameters that could have been used to match these survival rate profiles jointly. At the same time, the parsimonious model does an adequate job at capturing key features of the empirical panel structure, which gives us confidence in our indirect inference procedure.
+
+
+\begin{table}[!htb]
+  %
+  \centering
+  \caption{Cohort survival rates and pooled survival shares, data and model\label{tab:survival_rates}}
+  %
+  \pretabvspace
+  %
+  \input{_tables/tabD1.tex}
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Table compares worker and firm survival rates in the data for two periods, the estimation period 1994--1998 (panel A) and the final period 2010--2014 (panel B), as well as in the simulated data from our estimated model (panel C), which was fit to data from 1994--1998. Two concepts of worker or firm survival rates are presented: the share of the starting year's cohort of workers or firms who survive for each number of consecutive years (columns ``Cohort'') and the share of all workers or firms who are observed for each number of years in the data (columns ``Pooled''). %
+      \emph{\scriptsize{}Source:} RAIS, 1994--1998 and 2010--2014, and model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{table}

@@ -1,0 +1,120 @@
+% !TEX root = EIMW2022.tex
+
+\section{Model Appendix\label{APPENDIX: Model}}
+
+This appendix provides further details on the equilibrium model presented in Section \ref{SECTION: Model}, including subsections on %
+%
+the model-implied employment distribution (Appendix \ref{app_subsec:employment_dist}), %
+%
+the steady-state firm size mapping (Appendix \ref{app_subsec:steady_state}), %
+%
+the equilibrium definition (Appendix \ref{app_subsec:equilibrium_definition}), %
+%
+and the numerical solution algorithm (Appendix \ref{app_subsec:algorithm}).
+
+
+
+
+\clearpage
+\subsection{The employment distribution\label{app_subsec:employment_dist}}
+
+The employment distribution, $G(z|a,s)$, is given by the Kolmogorov Forward Equation (KFE),
+%
+\begin{eqnarray*}
+  0 &=& - \Big(\delta(a,s)+sp(a,s)(1-F(z|a,s))\Big) G(z|a,s)e(a,s) + p(a,s)u(a,s)F(z|a,s)
+\end{eqnarray*}
+%
+The first term reflects the number $G(z|a,s)e(a,s)$ of workers employed at firms with productivity at most $z$. These workers flow into unemployment at rate $\delta(a,s)$. They receive outside offers at rate $sp(a,s)$, which in equilibrium they accept if they come from more productive firms, $1-F(z|a,s)$. The last term reflects inflows into firms with productivity at most $z$. Since no employed worker accepts a job offer from a less productive firm, the only inflows are from unemployment. In particular, the unemployed receive job offers at rate $p(a,s)$. Rearranging, we get the expression in the paper,
+\begin{eqnarray*}
+G(z|a,s) &=& \frac{ p(a,s)F(z|a,s)}{\delta(a,s)+sp(a,s)(1-F(z|a,s))} \frac{u(a,s)}{e(a,s)}
+\end{eqnarray*}
+
+
+
+
+\clearpage
+\subsection{The steady-state firm size mapping\label{app_subsec:steady_state}}
+
+The size $l(w,v|a,s)$ of a firm posting vacancies $v$ with wage $w$ in market $(a,s)$ is given by the KFE
+\begin{eqnarray*}
+0 &=& - \Big(\delta(a,s)+sp(a,s)(1-F(z|a,s))\Big) l(w,v|a,s) + vq(a,s)\left( \frac{u(a,s)}{S(a,s)} + \frac{se(a,s)}{S(a,s)}G(z|a,s)\right)
+\end{eqnarray*}
+The firm looses workers to unemployment and up the job ladder. Each vacancy contacts a potential hire at rate $q(a,s)$, who is unemployed with probability $u(a,s)/S(a,s)$ and employed with complementary probability. Employed workers are hired iff they are at a less productive firm. Noting that $q(a,s)=p(a,s)S(a,s)/V(a,s)$, substituting and rearranging,
+\begin{eqnarray*}
+l(w,v|a,s) &=& \frac{v}{V(a,s)} p(a,s) \frac{u(a,s) + se(a,s)G(z|a,s)}{\delta(a,s)+sp(a,s)(1-F(z|a,s)) }
+\end{eqnarray*}
+Using equation \eqref{eq: employment distribution} to substitute for the employment distribution $G(\cdot)$,
+\begin{eqnarray*}
+l(w,v|a,s) &=& \frac{v}{V(a,s)} p(a,s) \frac{u(a,s)\frac{\left(\delta(a,s) + sp(a,s) \left(1-F\left(w|a,s\right)\right)\right)}{\left(\delta(a,s) + sp(a,s) \left(1-F\left(w|a,s\right)\right)\right)} +s \frac{p(a,s)F\left(w|a,s\right)}{\delta(a,s) + sp(a,s) \left(1-F\left(w|a,s\right)\right)}u(a,s)}{\delta(a,s)+sp(a,s)(1-F(w|a,s))} \\
+&=& \frac{v u(a,s) p(a,s) }{V(a,s)} \frac{\delta(a,s) + sp(a,s) \left(1-F\left(w|a,s\right)\right) +s p(a,s)F\left(w|a,s\right)}{\left(\delta(a,s)+sp(a,s)(1-F(w|a,s))\right)^2} \\
+&=& \frac{v u(a,s) p(a,s) }{V(a,s)} \frac{\delta(a,s) + sp(a,s)}{\left(\delta(a,s)+sp(a,s)(1-F(w|a,s))\right)^2}
+\end{eqnarray*}
+
+
+
+
+\clearpage
+\subsection{Equilibrium definition\label{app_subsec:equilibrium_definition}}
+
+We here define a equilibrium of the model economy presented in Section \ref{SECTION: Model}.
+
+\begin{definition}
+An equilibrium of our economy consists of
+\begin{itemize}
+  \item a set of wage and vacancy posting policies $\Big\{w(z|a,s),v(z|a,s)\Big\}$ that solve firms' problem;
+  \item a reservation wage $r(a,s)$ that solves workers' problem; and
+  \item aggregate states $\Big\{ G(z|a,s),e(a,s),u(a,s),V(a,s),p(a,s),q(a,s)\Big\}$ that are consistent with their laws of motion in steady-state as well as the matching technology.
+\end{itemize}
+\end{definition}
+
+To characterize the equilibrium, we start by substituting our assumed iso-elastic cost function into firms' problem \eqref{eq: firm problem} and taking first-order conditions,
+\begin{eqnarray}
+c(a,s) v(z|a,s)^{\eta} &=& \left(z-w\right)\frac{\partial l\left(w,v|a,s\right)}{\partial v} \label{eq: foc1} \\
+l(w,v|a,s) &=& \left(z-w\right)\frac{\partial l\left(w,v|a,s\right)}{\partial w} \label{eq: foc2}
+\end{eqnarray}
+Differentiating the equilibrium size \eqref{eq: equilibrium size} with respect to vacancies
+\begin{eqnarray*}
+\frac{\partial l\left(w,v|a,s\right)}{\partial v} &=& \frac{u(a,s) p(a,s) }{V(a,s)} \frac{\delta(a,s) + sp(a,s)}{\left(\delta(a,s)+sp(a,s)(1-F(w|a,s))\right)^2}
+\end{eqnarray*}
+Substituting this into the first-order condition for vacancies \eqref{eq: foc1},
+\begin{eqnarray}\label{eq: foc12}
+c(a,s) v(z|a,s)^{\eta} &=& \left(z-w(z|a,s)\right) \frac{u(a,s) p(a,s) }{V(a,s)} \frac{\delta(a,s) + sp(a,s)}{\left(\delta(a,s)+sp(a,s)(1-F(w(z|a,s)|a,s))\right)^2}
+\end{eqnarray}
+Differentiating the equilibrium size \eqref{eq: equilibrium size} with respect to wages
+\begin{eqnarray*}
+\frac{\partial l\left(w,v|a,s\right)}{\partial w} &=& 2sp(a,s)f(w|a,s)\frac{v u(a,s) p(a,s) }{V(a,s)} \frac{\delta(a,s) + sp(a,s)}{\left(\delta(a,s)+sp(a,s)(1-F(w|a,s))\right)^3}
+\end{eqnarray*}
+Substituting this into the first-order condition for wages \eqref{eq: foc2} and cancelling terms
+\begin{eqnarray}\label{eq: foc22}
+\delta(a,s)+sp(a,s)(1-F(w(z|a,s)|a,s)) &=& \left(z-w(z|a,s)\right) 2sp(a,s)f(w(z|a,s)|a,s)
+\end{eqnarray}
+As in \citetappendix{BurdettMortensen1998_appendix}, more productive firms post higher wages. Consequently,
+\begin{eqnarray*}
+F(w(z|a,s)|a,s) &=& \frac{M}{V} \int_{\underline{z}}^{z} v(\tilde{z}|a,s) d\Gamma(\tilde{z}), \hspace{.5in} f(w(z|a,s)|a,s)w'(z|a,s) \ \ = \ \ \frac{M}{V} v(z|a,s) \gamma(z)
+\end{eqnarray*}
+Define $h(z|a,s)=F(w(z|a,s)|a,s)$ so that $f(w(z|a,s)|a,s)= h'(z|a,s) / w'(z|a,s)$. Substituting in \eqref{eq: foc22},
+\begin{eqnarray}\label{eq: foc23}
+w'(z|a,s) &=& \left(z-w(z|a,s)\right) \frac{2sp(a,s)h'(z|a,s)}{\delta(a,s)+sp(a,s)(1-h(z|a,s))}
+\end{eqnarray}
+
+We also have that $h'(z|a,s)=\frac{M}{V(a,s)} v(z|a,s) \gamma(z)$ so that $v(z|a,s)=\frac{V(a,s)}{M} \frac{h'(z|a,s)}{\gamma(z)}$. Substituting in \eqref{eq: foc12},
+\begin{eqnarray}\label{eq: foc13}
+h'(z|a,s) &=& \frac{M}{V(a,s)} \gamma(z)  \left(\frac{1}{c(a,s)}\left(z-w(z|a,s)\right) \frac{u(a,s) p(a,s) }{V(a,s)} \frac{\delta(a,s) + sp(a,s)}{\left(\delta(a,s)+sp(a,s)(1-h(z|a,s))\right)^2}\right)^{\frac{1}{\eta}}
+\end{eqnarray}
+
+Equations \eqref{eq: foc23}--\eqref{eq: foc13} constitute a system of differential equations in the two functions $w(z|a,s)$ and $h(z|a,s)$. The first boundary condition is that wages of the least productive firm must equal the lowest possible pay in the market, $\lim_{z\to \underline{z}(a,s)} w(z|a,s)=\max\left\{ r(a,s),\frac{w^{\text{min}}}{a} \right\}$. The second boundary condition is that the CDF of the offer distribution is zero for the least productive firm, $\lim_{z\to \underline{z}(a,s)} h(z|a,s)=0$, where $\underline{z}(a,s)$ is the least productive firm active in market $(a,s)$: $\underline{z}(a,s)=\max \left\{\underline{z},\max\left\{r(a,s),\frac{w^{\text{min}}}{a}\right\}\right\}$. Finally, the key equilibrium consistency condition is that the total number of vacancies, $V(a,s)$, is such that the CDF of offered wages integrates to one, $\lim_{z\to\overline{z}} h(z|a,s) = 1$.
+
+
+
+
+\clearpage
+\subsection{Numerical solution algorithm\label{app_subsec:algorithm}}
+Recall that the parameter vector $\mathbf{p}$ includes the reduced form job finding rate $\lambda$. Hence given a parameter vector, we know all worker flows since $\mathbf{p}$ also includes $\{\delta_0,\delta_1,\phi_0,\phi_1,\pi\}$. We use the flows to get the implied stock of workers, $\{u(a,s),e(a,s)\}$, and based on that we recover the required aggregate number of vacancies $V(a,s)$ consistent with the job finding rate $p(a,s)=\lambda$. Recall that the parameter vector $\mathbf{p}$ also includes the reduced form parameters fully characterizing the reservation wage, $r(a,s)$. Hence, we also know the boundary conditions.
+
+To solve for the equilibrium, we start by solving the system of differential equations \eqref{eq: differential equation system} for a low cost $c_0(a,s)$ and a high cost, $c_1(a,s)$. Recall that the key consistency condition is $\lim_{z\to\overline{z}} h(z|a,s) = 1$. We require that under the low cost, firms create too many jobs, $\lim_{z\to\overline{z}} h_0(z|a,s) > 1$, while under the high cost, firms create too few jobs, $\lim_{z\to\overline{z}} h_1(z|a,s) < 1$. If this is not true under $c_0(a,s)$ ($c_1(a,s)$), we adjust $c_0(a,s)$ ($c_1(a,s)$) down (up) until it is true. After we have found $c_0(a,s)$ and $c_1(a,s)$ such that both of these conditions hold, we apply a bisection to find the cost $c(a,s)$ such that $\lim_{z\to\overline{z}} h(z|a,s) = 1$.
+
+We subsequently simulate a monthly approximation to the model, starting workers off from the steady-state distribution. We follow exactly our empirical procedure to construct both a monthly and an annual data set based on the simulated data, including how to select a main employment spell and compute all outcome variables of interest. In particular, we estimate an AKM regression based on the simulated annual data set restricted to the largest connected set, which as in the data covers the vast majority of employment spells.
+
+The steps above are sufficient to estimate the model. Having obtained an estimated parameter vector $\mathbf{p}^\ast$, we compute the implied flow value of leisure, $b(a)$, such that the reservation wage is consistent with our reduced form parameter or alternatively makes workers indifferent between working at the minimum wage and unemployment.
+
+To subsequently solve the model for alternative levels of the minimum wage, we instead hold the cost $c(a,s)$ fixed at its estimated value, as well as the flow value $b(a)$. Applying a similar bisection as above, we instead guess a low job finding rate $p_0(a,s)$ and a high job finding rate $p_1(a,s)$, solve for the equilibrium number of vacancies $V(a,s)$ consistent with these job finding rates, and solve the system of differential equations \eqref{eq: differential equation system}. Since the job finding rate $p(a,s)$ is inversely related to the worker finding rate $q(a,s)$, we require that firms want to create too many jobs under the low job finding rate $p_0(a,s)$ (i.e. high worker finding rate $q_0(a,s)$), and vice versa. If not, we adjust the initial guesses $\{p_0(a,s),p_1(a,s)\}$ until this holds. After that, we apply a bisection for the job finding rate $p(a,s)$ until the key equilibrium consistency condition $\lim_{z\to\overline{z}} h(z|a,s) = 1$ holds.

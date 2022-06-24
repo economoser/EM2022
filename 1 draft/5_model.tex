@@ -1,0 +1,106 @@
+% !TEX root = EIMW2022.tex
+
+\section{Equilibrium model of a labor market subject to a minimum wage\label{SECTION: Model}}
+
+We now develop an equilibrium model of the Brazilian labor market subject to a minimum wage. Our framework is essentially a series of heterogeneous \citet{BurdettMortensen1998} economies separated by worker types. Our contribution is to provide empirical content to this framework by integrating unobserved worker heterogeneity, minimum wage jobs, and endogenous job creation in a tractable manner. The extended framework is geared toward estimation on linked employer-employee data and an analysis of the equilibrium effects of the minimum wage on the distribution of wages and employment. %
+
+\subsection{Environment}
+
+Consider a continuous-time economy in steady state populated by a unit mass of workers and a mass $M$ of firms, both infinitely-lived and with risk-neutral preferences over consumption discounted at rate $\rho$.
+
+
+\paragraph{Worker types.}
+
+At any point in time, a worker can be either employed or nonemployed. We think of nonemployment as a simple way of capturing either unemployment or informal employment with associated utility flow value $ab(a)$ that depends on permanent worker ability $a \sim \Psi(\cdot)$, with $a \in [\underline{a},\overline{a}]$. That the informal market offers a constant flow utility simplifies the analysis substantially. We think of the dependence of this flow utility on ability $a$ as reflecting individual traits that are valued not just in formal employment but also in informal employment or home production. This ability parameter corresponds to both observable and unobservable worker characteristics, which Appendix \ref{app_subsec:unobserved_heterogeneity} shows matter for explaining empirical wage dispersion.
+
+Workers also differ in their relative on-the-job search efficiency, $s\in[\underline{s},\overline{s}]$. In particular, an employed worker of type $(a,s)$ becomes nonemployed at Poisson rate $\delta(a,s)$, at which point her search efficiency is updated according to a first-order Markov process with transition probability $\pi(s'|a,s)$.\footnote{The assumption that search efficiency only updates when a worker transitions into nonemployment avoids added complexity from worker type transition hazards entering firms' problem.} We think of this assumption as reflecting in reduced-form different propensities to switch employers, for instance due to family circumstances preventing a geographic move.\footnote{In a framework with endogenous search intensity as in \citet{Lentz2010}, we hypothesize that a rise in the minimum wage would have two opposing effects on incentives to search. On the one hand, it would render employment more attractive since it pays better on average, which incentivizes search. On the other hand, it flattens the wage ladder and reduces job vacancies, which disincentivizes search. Given these offsetting forces and existing evidence that worker search effort is rather inelastic \citep{engbom2020}, we focus here on a model with exogenous search effort.} %
+As will become clear, it allows the model to match the modest spike in the wage distribution at the minimum wage in Brazil (that being said, we show in Appendix \ref{app_subsec:effects_dependence_on_parameters} that our main results are not sensitive to the particular value for $\pi(s'|a,s)$).
+
+\paragraph{Technology.}
+
+Firms are heterogeneous in their permanent productivity $z \sim \Gamma(z)$, with $z \in [\underline{z},\overline{z}]$. A firm that employs $l(a,s)$ workers of each type $(a,s)$ produces output according to the linear technology
+%
+\begin{eqnarray*}
+  y\left(z,\left\{ l(a,s)\right\} _{a,s}\right) &=& z\int_{\underline{a},\underline{s}}^{\overline{a},\overline{s}} a l(a,s)da ds.
+\end{eqnarray*}
+%
+To hire workers, firms post vacancies $v$ in each market $(a,s)$ at a strictly convex, increasing cost $c(v|a,s)$, which reflects the cost of advertising the job, screening applicants and training workers for the job.
+
+
+\paragraph{Search and matching.}
+
+Both nonemployed and employed workers search for jobs at random in labor markets that are segmented by worker type, $(a,s)$. Let $p(a,s)$ denote the Poisson arrival rate of job offers per unit of search efficiency in market $(a,s)$. A job offer is an opportunity to work for a fixed piece rate $w$ for the duration of a job. Therefore, a worker of ability $a$ employed at piece rate $w$ receives flow value $wa$. Let $F(w|a,s)$ denote the cumulative distribution function (cdf) of piece rates offered in market $(a,s)$. While workers take offer arrival rates and the offer distribution as given, both are determined in equilibrium by firms' vacancy and wage posting decisions. In particular, if firms post total vacancies $V(a,s)$ in a given market $(a,s)$ and workers's aggregate search intensity is $S(a,s) = u(a,s)+se(a,s)$, where $u(a,s)$ is the number of nonemployed workers and $e(a,s)$ is the number of employed workers of type $(a,s)$, then the total number of worker-firm contacts in market $(a,s)$ is given by $\chi V(a,s)^{\alpha}S(a,s)^{1-\alpha}$. Here, $\chi>0$ is the match efficiency and $\alpha\in(0,1)$ is the match elasticity with respect to aggregate vacancies.
+
+
+
+
+\subsection{Worker's problem and the distribution of workers over the job ladder}
+
+Let $U(a,s)$ denote the value to an nonemployed worker with ability $a$ and search efficiency $s$. Let $W(w,a,s)$ be the value to a worker with ability $a$ and search efficiency $s$ from being employed at piece rate $w$. The value $U(a,s)$ satisfies the following Hamilton-Jacobi-Bellman (HJB) equation:
+%
+\begin{eqnarray}
+  \label{eq: value of unemployment}
+  \rho U\left(a,s\right) &=& a b\left(a\right) + p(a,s)\int_{\underline{w}(a,s)}^{\overline{w}(a,s)}\max\left\{ W(w,a,s)-U\left(a,s\right),0\right\} dF\left(w\left|a,s\right.\right)
+\end{eqnarray}
+%
+For nonemployed workers, there exists a reservation threshold $r(a,s)$ such that $W(r(a,s),a,s)=U\left(a,s\right)$. A nonemployed worker of type $(a,s)$ accepts any piece rate offer $w \geq r(a,s)$ and rejects any offer $w < r(a,s)$. In equilibrium, firms only make offers with $w \geq r(a,s)$.
+
+The value $W(w,a,s)$ of a worker of type $(a,s)$ employed at piece rate $w$ is given by the HJB equation:
+%
+\begin{eqnarray}
+  \label{eq: value of employment}
+  \rho W(w,a,s)	&=& wa + sp(a,s)\int_{w}^{\overline{w}(a,s)}\left(W\left(w',a,s\right)-W\left(w,a,s\right)\right)dF\left(w'\left|a,s\right.\right) \\
+  &+& \delta(a,s)\left( \int_{\underline{s}}^{\overline{s}} U\left(a,s'\right) \pi(s'|a,s)ds'-W(w,a,s)\right) \nonumber
+\end{eqnarray}
+%
+A worker of type $(a,s)$ employed at piece rate $w$ receives outside offers at rate $sp(a,s)$, which they accept if the associated piece rate offer $w'$ satisfies $w' > w$. If an employed worker rejects an outside offer, they remain employed in their current job. Employed workers become nonemployed at exogenous rate $\delta(a,s)$, in which case the worker's search efficiency updates according to the Markov process $\pi(s'|a,s)$.
+
+Let $G(w|a,s)$ denote the steady-state cdf of employed workers of type $(a,s)$ over piece rates $w$. Appendix \ref{APPENDIX: Model} shows that this distribution satisfies:
+%
+\begin{eqnarray}
+  \label{eq: employment distribution}
+  G\left(w|a,s\right) &= & \frac{p(a,s)F\left(w|a,s\right)}{\delta(a,s) + sp(a,s) \left(1-F\left(w|a,s\right)\right)}\frac{u(a,s)}{e(a,s)}.
+\end{eqnarray}
+%
+
+
+
+
+\subsection{Firms' problem}
+
+Under the assumption that the discount rate tends to zero, $\rho \to 0$, firms' dynamic problem reduces to maximizing flow profits. Firms choose, market by market, how many job openings to advertise, $v\geq 0$, and what piece rate to pay, $w$, subject to a minimum wage constraint, $wa \geq w^{\text{min}}$:
+\begin{eqnarray}
+  \label{eq: firm problem}
+  \max_{w\geq w^{min}/a,v}\left\{ a \left(z-w\right)l\left(w,v|a,s\right)-c(v|a,s)\right\},
+\end{eqnarray}
+where $l(w,v|a,s)$ is the number of workers of type $(a,s)$ that a firm posting piece rate $w$ and vacancies $v$ attains in equilibrium. In particular, Appendix \ref{app_subsec:steady_state} shows that:
+%
+\begin{eqnarray}
+  \label{eq: equilibrium size}
+  l\left(w,v|a,s\right) &=& \frac{v u(a,s)p(a,s)}{V(a,s)} \frac{\delta(a,s) + sp(a,s)}{\left(\delta(a,s)+sp(a,s)(1-F(w|a,s))\right)^2}
+\end{eqnarray}
+%
+
+Let $v(z|a,s)$ denote the optimal vacancy policy of a firm with productivity $z$ in market $(a,s)$ and $w(z|a,s)$ its optimal wage policy. Given these policies, the equilibrium offer distribution is given by:
+%
+\begin{eqnarray*}
+  F(w(z|a,s)|a,s) &=& \frac{M}{V(a,s)} \int_{\underline{z}}^z v(\tilde{z}|a,s)d\Gamma(\tilde{z}), \hspace{.3in} \text{where} \hspace{.1in} V(a,s) \ \ = \ \ M \int_{\underline{z}}^{\overline{z}} v(\tilde{z}|a,s)d\Gamma(\tilde{z})
+\end{eqnarray*}
+%
+
+Henceforth, we assume that the vacancy cost takes an isoelastic form, $c(v,a,s)=ac(a,s)v^{1+\eta}/(1+\eta)$. Define $h(z|a,s)=F(w(z|a,s)|a,s)$ as the vacancy-weighted cdf of firms over productivity, so that $f(w(z|a,s)|a,s)= h'(z|a,s) / w'(z|a,s)$.
+
+
+
+
+\subsection{Equilibrium}
+
+Appendix \ref{APPENDIX: Model} defines the equilibrium, which market by market can be characterized as a system of two first-order ordinary differential equations in the wage policy, $w(z|a,s)$, and the cdf of firms, $h(z|a,s)$:
+%
+\begin{eqnarray}
+  \label{eq: differential equation system}
+  w'(z|a,s) &=& \left(z-w(z|a,s)\right) \frac{2 s p(a,s) h'(z|a,s)}{\delta(a,s)+s p(a,s)\left(1-h(z|a,s)\right)}, \\
+  h'(z|a,s) &=& \gamma(z) \frac{M}{V(a,s)} \left(\frac{1}{c(a,s)}\left(z-w(z|a,s)\right) \frac{u(a,s)}{V(a,s)} p(a,s) \frac{\delta(a,s) + sp(a,s)}{\left(\delta(a,s)+sp(a,s)(1-h(z|a,s))\right)^2}\right)^{\frac{1}{\eta}}, \nonumber
+\end{eqnarray}
+%
+subject to the initial value conditions $w(\underline{z}(a,s)|a,s)=\max\{ r(a,s), w^{\text{min}}/a \}$ and $h(\underline{z}(a,s)|a,s)=0$, where $\underline{z}(a,s)$ is the lowest productivity active in market $(a,s)$, so $\underline{z}(a,s)=\max \{\underline{z},\max\{r(a,s), w^{\text{min}}/a \} \}$. Equilibrium requires that the total number of vacancies, $V(a,s)$, is such that $\lim_{z\to\overline{z}} h(z|a,s) = 1$.

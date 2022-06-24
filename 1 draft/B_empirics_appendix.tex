@@ -1,0 +1,1070 @@
+% !TEX root = EIMW2022.tex
+
+\section{Empirical Appendix\label{APPENDIX: Empirics}}
+
+This appendix provides further details on the empirical exercises conducted in Section \ref{SECTION: Empirics}, including subsections on %
+%
+the evolution of earnings inequality and the minimum wage over time (Appendix \ref{appendix: inequality and mw}), %
+%
+the minimum wage spike (Appendix \ref{app:mw_spike}), %
+%
+the incidence of minimum wage jobs (Appendix \ref{appendix:who_earns_the_mw}), %
+%
+the evolution of the effective bindingness of the minimum wage (Appendix \ref{subsec:kaitz-evolution}), %
+%
+additional details on the effects of the minimum wage on wage inequality (Appendix \ref{app_subsection:lee_regressions}), %
+%
+additional regression results using alternative specifications (Appendix \ref{app_subsec_alt_specs}), %
+%
+additional regression results using alternative controls (Appendix \ref{app_subsec_alt_controls}), %
+%
+additional regression results using alternative time periods (Appendix \ref{app_subsec_alt_periods}), %
+%
+additional regression results using alternative polynomial orders for region-specific time trends (Appendix \ref{app_subsec:lee_regressions_trends}), %
+%
+additional regression results that cluster standard errors at the state level or at the mesoregion level (Appendix \ref{app_subsec:lee_regressions_cluster}), %
+%
+a comparison between our findings and subsequent work by \citetappendix{Haanwinckel2020_appendix} (Appendix \ref{app_subsec:lee_regressions_haanwinckel}), %
+%
+a comparison of the relative bindingness of the minimum wage between Brazil and the U.S. (Appendix \ref{app_subsec:comparison_Brazil_US}), %
+%
+a comparison between the distributions of (changes in) log wages in current BRL and in multiples of the current minimum wage (Appendix \ref{app_subsec:comparison_nominal_multiples}), and %
+%
+hours worked in relation to the bindingness of the minimum wage (Appendix \ref{sec:Hours}). %
+
+
+
+\clearpage
+\subsection{The evolution of earnings inequality and the minimum wage\label{appendix: inequality and mw}}
+
+Figure \ref{fig:var_minw} shows a strong negative comovement between the minimum wage and the
+standard deviation of log wages between 1985 and 2018, with a time series correlation of $-0.947$.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:var_minw}Evolution of wage inequality and the real minimum wage, 1985--2018}
+  %
+  \prefigvspace
+  %
+  \includegraphics[width=0.45\columnwidth]{_figures/figB1.pdf} % _figures/sd_mw_real.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Statistics are for males
+      of age 18--54. Real minimum wage is the annual mean of the monthly
+      time series. The correlation between the two time series is $-0.947$. %
+      \emph{\scriptsize{}Source: } RAIS and IPEA, 1985--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{The (relatively small) spike at the minimum wage \label{app:mw_spike}}
+
+Much of the previous empirical literature has interpreted the mass of workers employed at the minimum wage as a measure of the bindingness of the wage floor \citepappendix{Flinn2006_appendix,Flinn2010_appendix}. However, theoretical labor market models in the spirit of \citetappendix{BurdettMortensen1998_appendix} predict that frictional wage dispersion for identical workers can be sustained absent any mass points in the wage distribution, including at the minimum wage. This suggests that any spike of workers at the minimum wage may be thought of independently from, or maybe in addition to, the effect of the minimum wage on the rest of the wage distribution. Although there is substantial heterogeneity in the empirical bindingness of the minimum wage across population subgroups in our administrative data from Brazil, we robustly find a relatively small spike at the wage floor for male workers of age 18--54. The remainder of this subsection is dedicated to studying the (relatively small) spike at the minimum wage in Brazil, both in the cross section and over time.
+
+
+\paragraph{Share of workers earning exactly, below, or around the minimum wage.}
+
+Panel \subref{subfig: share-at-MW-A} of Figure \ref{fig: share-at-MW}
+plots the state-level distribution of the share of workers
+earning exactly the minimum wage against the relative
+bindingness of the minimum wage measured by the Kaitz-50 index, defined
+as the log minimum-to-median wage, in 1996 and 2018. The average share of workers earning exactly the minimum wage is stable around two percent throughout this period.%
+%
+\footnote{For comparison, 3.3 percent of hourly paid workers in the U.S. earned the prevailing federal minimum wage or less in 2015 \citepappendix{BureauofLaborSt2016_appendix}.} %
+%
+We find a weak positive correlation between the Kaitz-50 index and the
+share of workers earning the minimum wage, but the share remains
+mostly below six percent even in states where the minimum wage is
+most binding.
+
+We can broaden our definition of a ``mass point'' to three alternative measures, the evolution of which from 1996 to 2018 is depicted in panel \subref{subfig: share-at-MW-B}
+of Figure \ref{fig: share-at-MW}. The share of workers earning exactly
+the minimum wage, shown by the blue line with circles, remains approximately flat at two percent between 1996 and 2018.
+A little under 3.5 percent of workers in 1996 and around 5.5 percent of workers in 2018 report earning exactly or less than the minimum wage,
+shown by the red line with diamonds.%
+%
+\footnote{Observations with earnings strictly below the minimum wage are likely due to a mix
+of legal exceptions, misreporting, and illegal employment.} %
+%
+Our most generous definition includes workers within a 5 percent band around
+the minimum wage, shown in green. This most generous measure evolves
+from 3.5 to 5.5 percent over this period, far from the roughly 30 percent
+of workers between the old and the new minimum wage.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig: share-at-MW}Share of workers at and around the minimum wage, 1996--2018}
+  %
+  \prefigvspace
+  %
+  \subfloat[Share earning exactly the minimum wage by state-years\label{subfig: share-at-MW-A}]{\includegraphics[width=.45\linewidth]{_figures/figB2A.pdf}}% _figures/share_mw_kaitz_state.pdf
+  \subfloat[Share exactly at, below, or around minimum wage\label{subfig: share-at-MW-B}]{\includegraphics[width=.45\linewidth]{_figures/figB2B.pdf}}% _figures/share_mw_all.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}This figure shows the share of workers with earning exactly at, below, or around the minimum wage. Panel \subref{subfig: share-at-MW-A}
+      shows share of male workers of age 18--54 earning exactly the minimum
+      wage against the Kaitz-50 index, $kaitz_{st}(50)\equiv\log w_{t}^{min}-\log w_{st}^{\text{P}50}$,
+      across states in 1996 and 2018. Area of circles is proportional to
+      population size. In panel \subref{subfig: share-at-MW-B}, the blue
+      line shows share of workers earning exactly the minimum wage, the
+      red line shows share at or below the minimum wage, and the green line
+      plots share within 5 percent of the minimum wage. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+Figure \ref{fig:histogram_mw_shares} shows that that there is substantial heterogeneity in the share of workers earning exactly the minimum wage across states (panel \subref{subfig:histogram_mw_shares_A}) and mesoregions (panel \subref{subfig:histogram_mw_shares_B}). At the same time, only a small fraction of regions have a share of workers earning exactly the minimum wage above seven percent.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:histogram_mw_shares}Histogram of share of workers earning exactly the minimum wage, 1996 and 2018}
+  %
+  \prefigvspace
+  %
+  \subfloat[\label{subfig:histogram_mw_shares_A}Across states]{\includegraphics[width=.45\columnwidth]{_figures/figB3A.pdf}}% _figures/hist_share_mw_state.pdf
+  \subfloat[\label{subfig:histogram_mw_shares_B}Across mesoregions]{\includegraphics[width=.45\columnwidth]{_figures/figB3B.pdf}}% _figures/hist_share_mw_meso.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}This figure shows histograms of the share of workers earning exactly the minimum wage across different population subgroups by state (Panel \subref{subfig:histogram_mw_shares_A}) and by mesoregion (Panel \subref{subfig:histogram_mw_shares_B}). Blue bars show the distribution in 1996, while red bars show the distribution in 2018. %
+      \emph{\scriptsize{}Source: } RAIS, 1996 and 2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\paragraph{Histograms of wages around the minimum wage.}
+
+Figure \ref{fig:histogram_around_mw} shows a histogram of wages in multiples of the minimum wage in 1996 and 2018. Figure \ref{fig:histogram_around_mw_log} shows a similar histogram for wages in logarithms.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:histogram_around_mw}Histogram of wages around the minimum wage, 1996 and 2018}
+  %
+  \prefigvspace
+  %
+  \subfloat[\label{subfig:histogram_around_mw_A}1996]{\includegraphics[width=.45\columnwidth]{_figures/figB4A.pdf}}% _figures/hist_spike_zoom_1996.pdf
+  \subfloat[\label{subfig:histogram_around_mw_B}2018]{\includegraphics[width=.45\columnwidth]{_figures/figB4B.pdf}}% _figures/hist_spike_zoom_2018.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}This figure shows histgrams of the wage distribution, measured in multiples of the minimum wage, zoomed in around the minimum wage (dashed vertical line) for 1996 (Panel \subref{subfig:histogram_around_mw_A}) and 2018 (Panel \subref{subfig:histogram_around_mw_B}). Bar width is set to 0.01, i.e., one centavo (subdivision of Brazilian Reais). %
+      \emph{\scriptsize{}Source: } RAIS, 1996 and 2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:histogram_around_mw_log}Histogram of log wages around the minimum wage, 1996 and 2018}
+  %
+  \prefigvspace
+  %
+  \subfloat[\label{subfig:histogram_around_mw_log_A}1996]{\includegraphics[width=.45\columnwidth]{_figures/figB5A.pdf}}% _figures/hist_spike_ln_zoom_1996.pdf
+  \subfloat[\label{subfig:histogram_around_mw_log_B}2018]{\includegraphics[width=.45\columnwidth]{_figures/figB5B.pdf}}% _figures/hist_spike_ln_zoom_2018.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}This figure shows histgrams of the log wage distribution, measured in log multiples of the minimum wage, zoomed in around the minimum wage (dashed vertical line) for 1996 (Panel \subref{subfig:histogram_around_mw_log_A}) and 2018 (Panel \subref{subfig:histogram_around_mw_log_B}). Bar width is set for 0.01, i.e., approximately one percent. %
+      \emph{\scriptsize{}Source: } RAIS, 1996 and 2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Who earns the minimum wage in Brazil?\label{appendix:who_earns_the_mw}}
+
+Figure \ref{fig: MW_share_current_by_edu} shows the share of workers currently earning the minimum wage by education group. The share of minimum wage earners is higher at younger ages and lower educational attainments. Yet the maximum share of minimum wage earners, namely that of workers of age 18--24 with at most a primary school degree, is around four percent.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig: MW_share_current_by_edu}Share of workers currently earning the minimum wage, by education group}
+  %
+  \prefigvspace
+  %
+  \includegraphics[width=.45\linewidth]{_figures/figB6.pdf} % _figures/mw_current_share_by_edu.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Figure shows share of workers earning exactly the minimum wage by education groups (colored lines) and age groups (x-axis values) during the period from 1996 to 2018. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+A striking feature of the Brazilian labor market is that, in spite of a relatively small share of workers earning the minimum wage at any point in time, a surprisingly large share of workers ever---currently, in the past, or in the future---earn the minimum wage. Figure \ref{fig:MW_share_ever} plots the share of workers who have ever earned the minimum wage during our sample period of 1996--2018.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:MW_share_ever}Share of workers who ever earned the minimum wage from 1996--2018}
+  %
+  \prefigvspace
+  %
+  \includegraphics[width=.45\linewidth]{_figures/figB7.pdf}% _figures/mw_ever_share_all.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Figure shows the share of workers who have ever (currently, in the past, or in the future) earned exactly the minimum wage by current income percentile. Current income percentiles are created by ranking workers within a given year according to their current wage for each year between 1996 and 2018. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+Figure \ref{fig: MW_share_ever_decomp} decomposes the share of workers who ever earned the minimum wage into those who earn the minimum wage currently, in the past, or in the future between 1996 and 2018.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig: MW_share_ever_decomp}Decomposition of share of workers who ever earned the MW, 1996--2018}
+  %
+  \prefigvspace
+  %
+  \includegraphics[width=.45\linewidth]{_figures/figB8.pdf} % _figures/mw_ever_share_all_decomp.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Figure shows the share of workers who have ever (currently, in the past, or in the future) earned exactly the minimum wage. The different colored lines show the share of workers who ever, currently, in the past, and in the future earn the minimum wage across current income percentiles. Current income percentiles are created by ranking workers within a given year according to their current wage for each year between 1996 and 2018. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:MW_share_ever_decomp_subgroups}Share ever employed at minimum wage, by subgroups}
+  %
+  \prefigvspace
+  %
+  \subfloat[By education group\label{subfig:MW_share_ever_decomp_subgroups_A}]{\includegraphics[width=0.33\columnwidth]{_figures/figB9A.pdf}}% _figures/mw_ever_share_by_edu.pdf
+  \subfloat[By age group\label{subfig:MW_share_ever_decomp_subgroups_B}]{\includegraphics[width=0.33\columnwidth]{_figures/figB9B.pdf}}% _figures/mw_ever_share_by_age.pdf
+  \subfloat[By year\label{subfig:MW_share_ever_decomp_subgroups_C}]{\includegraphics[width=0.33\columnwidth]{_figures/figB9C.pdf}}% _figures/mw_ever_share_by_year.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Figure shows the share of workers who have ever (currently, in the past, or in the future) earned exactly the minimum wage by current income percentile, separately by education group (Panel \subref{subfig:MW_share_ever_decomp_subgroups_A}), by age group (Panel \subref{subfig:MW_share_ever_decomp_subgroups_B}), and by year (Panel \subref{subfig:MW_share_ever_decomp_subgroups_C}). Current income percentiles are created by ranking workers within a given year according to their current wage for each year between 1996 and 2018. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Evolution of Kaitz indices by state\label{subsec:kaitz-evolution}}
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig: kaitz}Data: Evolution of Kaitz indices by state, 1996--2018}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Kaitz-50 index\label{fig: kaitz_A}]{%
+   \includegraphics[width=.45\columnwidth]{_figures/figB10A.pdf}% _figures/kaitz_p50_evolution.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Kaitz-90 index\label{fig: kaitz_B}]{%
+   \includegraphics[width=.45\columnwidth]{_figures/figB10B.pdf}% _figures/kaitz_p90_evolution.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}The Kaitz-$p$ index for state $s$ in year $t$ is defined as
+      $kaitz_{st}(p)=\log\left(\text{federal minimum wage}_{t}\right)-\log\left(w^{\text{P}p}\right)$ for earnings percentiles $p \in \{ 50, 90 \}$. Each blue line markets one of Brazil's 27 states. The red line represents the weighted mean across states. %
+      \emph{\scriptsize{}Source: }RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Additional results on the effects of the minimum wage on wage inequality\label{app_subsection:lee_regressions}}
+
+We now show that the inverse relationship between state-year level bindingness of the minimum wage and wage inequality generalizes to the full set of states over time. To see this, we define the \emph{Kaitz-50 index} as $kaitz_{st}(50) \equiv \log w_{t}^{min} - \log w_{st}(50)$, that is, the log difference between the minimum wage prevailing at time $t$, $w_{t}^{min}$, and the median wage of subgroup $s$ at time $t$, $w_{st}(50)$.%
+%
+\footnote{Recall that Figure \ref{fig: kaitz} in Appendix \ref{subsec:kaitz-evolution} shows that variation in the Kaitz-50 index and the Kaitz-90 index across Brazilian states is large initially and decreases as the minimum wage increases, while approximately preserving the ranking of states over time.} %
+%
+Figure \ref{fig:Lee_data} plots the relation between different
+log wage percentile ratios and the Kaitz-50 index. Panel \subref{fig:Lee_data_subfig A} plots empirical lower-tail
+inequality, measured by the P50/P10, against the Kaitz-50 index across
+Brazilian states over time. The negative 45 degree line marks states
+where the minimum wage is binding at the tenth percentile of the wage distribution.
+Panel \subref{fig:Lee_data_subfig B} repeats the same exercise
+for the P50/P25 ratio. Both plots show a negative relationship lower-tail inequality and the Kaitz-50 index that grows more pronounced for more binding states in the cross section and over time. For comparison, the remaining two panels
+show a weaker relationship between top inequality, measured by the
+P75/P50 in panel \subref{fig:Lee_data_subfig C} and by the P90/P50 in panel \subref{fig:Lee_data_subfig D}, and the Kaitz-50 index.%
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:Lee_data}Log wage percentile ratios across Brazilian states over time, 1996--2018}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[P50/P10\label{fig:Lee_data_subfig A}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB11A.pdf}% _figures/perc_scatter_p50_p10_state.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[P50/P25\label{fig:Lee_data_subfig B}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB11B.pdf}% _figures/perc_scatter_p50_p25_state.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \hspace*{\fill}%
+  \csubfloat[P75/P50\label{fig:Lee_data_subfig C}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB11C.pdf}% _figures/perc_scatter_p75_p50_state.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[P90/P50\label{fig:Lee_data_subfig D}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB11D.pdf}% _figures/perc_scatter_p90_p50_state.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots various log wage
+      percentile ratios against the Kaitz-50 index, defined as $kaitz_{st}(50) \equiv \log w_{t}^{min} - \log w_{st}^{\text{P}50}$, where $w_{t}^{min}$ is the minimum wage prevailing at time $t$ and $w_{st}(50)$ is the median wage in subgroup $s$ at time $t$. Each marker represents a combination of a state $s$ and year $t$ for each
+      of Brazil's 27 states between 1996 and 2018. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:Lee_state_sd}Data: Standard deviation of log wages across states over time, 1996--2018}
+  %
+  \prefigvspace
+  %
+  \includegraphics[width=.45\columnwidth]{_figures/figB12.pdf} % _figures/perc_scatter_sd_state.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots the standard deviation of log wages against the Kaitz-50 index, $kaitz_{st}(50)\equiv\log w_{t}^{min}-\log w_{st}^{\text{P}50}$,
+      with each marker representing one state-year combination for each
+      of Brazil's 27 states between 1996 and 2018. %
+      \emph{\scriptsize{}Source: } RAIS.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+
+
+\clearpage
+\subsection{Additional regression results: Alternative specifications\label{app_subsec_alt_specs}}
+
+Figure \ref{app_fig_alt_specs} compares our baseline results (black line with circles) with three alternative specifications that consist of an IV specification in levels (blue line with diamonds), an OLS specification in differences (red line with triangles), and an IV specification in differences (green line with squares). For all specifications, relative to P50, percentiles above the median and reaching up as high as the 90th percentile remain statistically significant. Relative to P90, spillover effects are present up to at least the 70th wage percentile. Notably, the IV specification in levels closely matches our baseline results, which were estimated via OLS in levels.
+
+Therefore, our main conclusions regarding the reach of spillovers remain unchanged under alternative specifications.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{app_fig_alt_specs}Alternative specifications}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_alt_specs_A}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB13A.pdf}% _figures/robustness_specifications_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_alt_specs_B}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB13B.pdf}% _figures/robustness_specifications_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows the results from four different specifications (colored markers and lines, plus error bars or shaded areas). The black circles and line correspond to the baseline specification from the main text, which is estimated via OLS in levels. The blue diamonds and line correspond to the same specification estimated via IV in levels. The red triangles and line correspond to the same specification estimated via OLS in differences. The green squares and line correspond to the same specification estimated via IV in differences. The IV strategy instruments the Kaitz-$p$ index and its square using an instrument set that consists of the log real statutory minimum wage, its square, and the log real statutory minimum wage interacted with the mean of the log real median wage for the region over the full sample period. Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{app_fig_alt_specs_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{app_fig_alt_specs_B} uses the 90th percentile as the base wage (i.e., $p=90$). The four error bars and four shaded areas represent 99 percent confidence intervals based on regular (i.e., not clustered) standard errors. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Additional regression results: Alternative controls\label{app_subsec_alt_controls}}
+
+Figure \ref{app_fig_alt_specs} compares our baseline results (black line with circles) with four specifications using alternative sets of controls, namely only state fixed effects (blue line with diamonds), only year fixed effects (red line with triangles), state fixed effects and year fixed effects (green line with squares), and a final specification with state fixed effects, year fixed effects, and state-specific linear time trends (orange line with plus signs). For all specifications, relative to P50, percentiles above the median and reaching up as high as the 90th percentile remain statistically significant. Relative to P90, spillover effects are consistently present up to the 90th wage percentile.
+
+Therefore, our main conclusions regarding the reach of spillovers remain unchanged under alternative sets of controls.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{app_fig_alt_controls}Alternative controls}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_alt_controls_A}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB14A.pdf}% _figures/robustness_controls_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_alt_controls_B}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB14B.pdf}% _figures/robustness_controls_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Additional regression results: Alternative time periods\label{app_subsec_alt_periods}}
+
+Figure \ref{app_fig_alt_specs} compares our baseline results (black line with circles) with three specifications using alternative time periods, namely the high-inflation period of 1985--1995 (blue line with diamonds), a period from 1985--12007 that is equally long as but earlier than our baseline period (red line with triangles), and the period of all available years from 1985--2018 (green line with squares). For all specifications, relative to P50, percentiles above the median and reaching up as high as the 90th percentile remain statistically significant. Relative to P90, all but the early high-inflation period from 1985--1995 show spillover effects that are consistently present up to the 90th wage percentile. Results for the early high-inflation period are measured more noisily and are significant only below the 60th percentile of wages.
+
+Therefore, our main conclusions regarding the reach of spillovers remain unchanged under alternative time periods and, furthermore, Brazil early high-inflation period does not exhibit significantly stronger spillovers than the later period we study.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{app_fig_alt_periods}Alternative time periods}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_alt_periods_A}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB15A.pdf}% _figures/robustness_years_p50_merged.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_alt_periods_B}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB15B.pdf}% _figures/robustness_years_p90_merged.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Additional regression results: Polynomial orders for state-specific trends\label{app_subsec:lee_regressions_trends}}
+
+There has been a fruitful debate concerning the potential benefits and harms from including region-specific time trends in econometric studies of the minimum wage---see for example \citetappendix{NeumarkSalasWascher2014_appendix}, \citetappendix{AllegrettoDubeReichZipperer2017_appendix}, and \citetappendix{NeumarkWascher2017_appendix}. To demonstrate the robustness of our findings to the concerns raised by this debate, Figure \ref{app_fig_alt_trends} shows additional specifications based on the econometric methodology in Section \ref{subsec:Spillover-effects-identified}. Specifically, we vary the polynomial degree order for state-specific time trends between one and three (with the degree-zero specifiction being that with only state fixed effects presented in Appendix \ref{app_fig_alt_controls}). Figure \ref{app_fig_alt_trends} presents the results from these alternative specifications.
+
+Starting with a description of Figure \ref{app_fig_alt_trends}, we note that specifications with either a quadratic or cubic trend show similar patterns to one another in terms of estimated marginal effects, particularly in the lower tail of the wage distribution. The estimated patterns are also similar to our baseline specification with state-specific linear time trends. All three specifications deliver significant effects of the minimum wage above the median, when measured relative to P50, and up to the 90th percentile of wages, when measured relative to P90.%
+%
+\footnote{While our finding of far-reaching spillover effects of the minimum wage are robust to the choice of state-specific time trends, we note that including state-specific higher-order time trends in this specification may possibly be asking for too much from our comparably short state-year panel of 23 years. For this reason, we prefer the specification with state fixed effects and only state-specific linear time trends as our baseline.} %
+%
+
+Therefore, our main conclusions regarding the reach of spillovers remain unchanged under alternative polynomial orders for state-specific time trends.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{app_fig_alt_trends}Alternative trends}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_alt_trends_A}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB16A.pdf}% _figures/robustness_trends_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_alt_trends_B}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB16B.pdf}% _figures/robustness_trends_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows the results from three different specifications (colored lines and error bars or shaded areas) with different polynomial degrees of the region-specific time trends: linear (black circles and line), quadratic (blue diamonds and line), and cubic (red triangles and line) polynomials in the calendar year---all estimated using OLS in levels. Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{app_fig_alt_trends_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{app_fig_alt_trends_B} uses the 90th percentile as the base wage (i.e., $p=90$). The three error bars and three shaded areas represent 99 percent confidence intervals based on regular (i.e., not clustered) standard errors. %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Additional regression results: Clustering standard errors\label{app_subsec:lee_regressions_cluster}}
+
+Figure \ref{app_fig_alt_ses} shows additional specifications based on the econometric methodology in Section \ref{subsec:Spillover-effects-identified} of the main text. Specifically, although the number of clusters at the state level falls below common thresholds for clustering \citepappendix{CameronMiller2015_appendix}, we here cluster standard errors at the state level. In contrast, Section \ref{subsec:Spillover-effects-identified} shows results based on unadjusted standard errors. The main take-away from Figure \ref{app_fig_alt_ses} is that standard errors become somewhat larger under clustering of standard errors at the state level, though they become smaller again when estimating our specification and clustering standard errors at the mesoregion level. Therefore, our main conclusions regarding the reach of spillovers remain unchanged under alternative ways of clustering standard errors.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{app_fig_alt_ses}Alternative standard errors}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_alt_ses_A}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB17A.pdf}% _figures/robustness_ses_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_alt_ses_B}]{%
+   \includegraphics[width=0.45\columnwidth]{_figures/figB17B.pdf}% _figures/robustness_ses_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows the results from three different specifications (colored lines and error bars or shaded areas) with different ways of constructing standard errors: estimating equation equation \eqref{eq:Lee} at the state level with regular (i.e., not clustered) standard errors (black circles and line), estimating equation equation \eqref{eq:Lee} at the state level with standard errors clustered at the state level (blue diamonds and line), and estimating equation equation \eqref{eq:Lee} at the mesoregion level with standard errors clustered at the mesoregion level (red triangles and line). Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{app_fig_alt_ses_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{app_fig_alt_ses_B} uses the 90th percentile as the base wage (i.e., $p=90$). The error bars and shaded areas represent 99 percent confidence intervals based on standard errors that are clustered either at the state level (black and blue markers and lines) or at the mesoregion level (red markers and line). %
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+
+
+\clearpage
+\subsection{Comparison with \citet{Haanwinckel2020_appendix}\label{app_subsec:lee_regressions_haanwinckel}}
+
+In complementary work, \citetappendix{Haanwinckel2020_appendix} follows our approach of estimating spillover effects of the minimum wage in Brazil using a methodology based on the seminal framework by \citetappendix{Lee1999_appendix} and the more recent contribution by \citetappendix{Autor2016_appendix}. Using a subset of 14 years of the RAIS data from 1996--2001, 2005--2009, and 2011--2013, \citetappendix{Haanwinckel2020_appendix} reports significant spillover effects of the minimum wage up to the 40th wage percentile with a 95 percent confidence interval, and up to the 30th wage percentile with a 99 percent confidence interval. The standard error bands estimated by \citetappendix{Haanwinckel2020_appendix} are relatively large above the median, rendering the point estimates indistinguishable from zero. In contrast, our baseline results using the 1996--2018 data indicates spillovers that are significant up to at least the 75th percentile of the wage distribution.
+
+There are several notable differences between our empirical approach and that in \citetappendix{Haanwinckel2020_appendix}. We discuss two key differences here. One difference is the exact econometric specification, which in the case of \citetappendix{Haanwinckel2020_appendix} includes a national quadratic time trend in addition to the state fixed effects and state-specific linear trends that we include in our baseline specification. We show below, by including a national quadratic trend, that this difference in specifications does not systematically change our insights, though some error bands increase significantly. A second difference is the set of years on which these specifications are estimated. We show below, by estimating our specification as well as those including a national quadratic trend, that this difference does explain some of the discrepancy in findings between our work and that by \citetappendix{Haanwinckel2020_appendix}. Furthermore, estimating our baseline specification and those with national quadratic trends on the full sample of 34 years of the RAIS data from 1985--2018, we robustly find significant spillovers up to at least the 75th wage percentile with comparably narrow standard error bands.
+
+To establish these results, we proceed in two steps. First, we reestimate our baseline specification for different sets of years to investigate their sensitivity to the choice of time period. Second, we implement the specifications from \citetappendix{Haanwinckel2020_appendix} on our baseline period (1996--2018) and compare the results to those from the same specification using either the restricted set of years used in \citetappendix{Haanwinckel2020_appendix} (1996--2001, 2005--2009, and 2011--2013), or the full set of years in the RAIS data (1985--2018).
+
+
+\paragraph{Alternative results using baseline specification estimated on different time periods.}
+
+We reestimate our baseline specification with state fixed effects and state-specific linear trends on three sets of years of the RAIS data, namely our baseline period comprising 1996--2018 (black line with circles), the years used in \citetappendix{Haanwinckel2020_appendix} comprising 1996--2001, 2005--2009, and 2011--2013 (blue line with diamonds), and the full period comprising 1985--2018 (red line with triangles). To remain conservative and also to match the choice in \citetappendix{Haanwinckel2020_appendix}, we cluster standard errors at the state level.
+
+Figure \ref{app_fig_haanwinckel_state_trend_1_ols_levels} shows the resulting estimates of these three specifications. Several points are worth noting. First, our baseline estimates remain significant up to the 90th percentile, both relative to P50 and also relative to P90. Second, the point estimates based on the subset of years used in \citetappendix{Haanwinckel2020_appendix} are close to ours in the lower tail, and slightly less pronounced in the upper tail, relative to P50. They are uniformly below ours, relative to P90. Third, a the same time, standard errors are significantly higher when using a subset of years, particularly in the upper tail. This results in point estimates above the 70th percentile being insignificant based on the years used in \citetappendix{Haanwinckel2020_appendix}, while they remain significant in our baseline. Fourth, using additional years going back to 1985 leads to similar point estimates and standard error bands compared to our baseline estimates.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Comparison with \citet{Haanwinckel2020_appendix}: State FEs and linear state time trends, OLS in levels\label{app_fig_haanwinckel_state_trend_1_ols_levels}}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_haanwinckel_state_trend_1_ols_levels_A}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB18A.pdf}% _figures/haanwinckel_state_trend_1_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_haanwinckel_state_trend_1_ols_levels_B}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB18B.pdf}% _figures/haanwinckel_state_trend_1_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows three sets of estimation results (colored lines and error bars or shaded areas) based on different time periods: our baseline period from 1996--2018 (black circles and line), the subset years used in \citetappendix{Haanwinckel2020_appendix}, comprising 1996--2001, 2005--2009, and 2011--2013 (blue diamonds and line), and all available years from 1985--2018 (red triangles and line). The included controls comprise a set of state fixed effects and state-specific linear time trends, which corresponds to the baseline specification in the main text. The specification is estimated via OLS in levels. Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{app_fig_haanwinckel_state_trend_1_ols_levels_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{app_fig_haanwinckel_state_trend_1_ols_levels_B} uses the 90th percentile as the base wage (i.e., $p=90$). The error bars and shaded areas represent 99 percent confidence intervals based on standard errors that are clustered at the state level. %
+      \emph{\scriptsize{}Source: } RAIS, 1985--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+From this, we conclude that---starting from our baseline specification---the choice of years matters somewhat for the estimated reach of spillovers, though the estimated effects remain significant up to the 70th percentile of wages.
+
+
+
+
+\paragraph{Alternative results using specifications from \citet{Haanwinckel2020_appendix} estimated on different time periods.}
+
+Next, we estimate specifications that include the same set of controls as in \citetappendix{Haanwinckel2020_appendix}: state fixed effects, state-specific linear trends, and a national quadratic trend. We first estimate these specifications via OLS in levels. As above, we estimate the specification on three different time periods, namely our baseline period comprising 1996--2018 (black line with circles), the years used in \citetappendix{Haanwinckel2020_appendix} comprising 1996--2001, 2005--2009, and 2011--2013 (blue line with diamonds), and the full period comprising 1985--2018 (red line with triangles). As above, we cluster standard errors at the state level.
+
+The results are presented in Figure \ref{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_levels}. There are a couple of take-aways. First, the inclusion of a national quadratic trends slightly attenuates the point estimates and significantly increases the standard error bands. Second, using our baseline years continues to yield significant effects of the minimum wage up to the median and again at the 60th wage percentile, relative to P50. All estimated effects remain significant up to the 90th wage percentile, relative to P90. Third, the subset of years used in \citetappendix{Haanwinckel2020_appendix} yield point estimates that are substantially similar to our baseline but not statistically significant above the 35th wage percentile, relative to P50. Point estimates are somewhat attenuated and remain significant up to the 65th wage percentile, relative to P90. Finally, using the full set of years yields point estimates that lie within the standard error bands of the other two sets of estimates but themselves have significantly tighter error bands.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Comparison with \citet{Haanwinckel2020_appendix}: State FEs, linear state time trends, and quadratic national trend, OLS in levels\label{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_levels}}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_levels_A}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB19A.pdf}% _figures/haanwinckel_state_trend_1_ntrend_2_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_levels_B}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB19B.pdf}% _figures/haanwinckel_state_trend_1_ntrend_2_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows three sets of estimation results (colored lines and error bars or shaded areas) based on different time periods: our baseline period from 1996--2018 (black circles and line), the subset years used in \citetappendix{Haanwinckel2020_appendix}, comprising 1996--2001, 2005--2009, and 2011--2013 (blue diamonds and line), and all available years from 1985--2018 (red triangles and line). The included controls comprise a set of state fixed effects, state-specific linear time trends, and a national quadratic time trend, which corresponds to the specification in \citetappendix{Haanwinckel2020_appendix}. The specification is estimated via OLS in levels. Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_levels_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_levels_B} uses the 90th percentile as the base wage (i.e., $p=90$). The error bars and shaded areas represent 99 percent confidence intervals based on standard errors that are clustered at the state level. %
+      \emph{\scriptsize{}Source: } RAIS, 1985--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\clearpage
+
+
+Next, we estimate specifications that include state fixed effects, state-specific linear trends, and a national quadratic trend via IV in levels. %
+Figure \ref{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_levels} shows the results. Both the estimates for our baseline set of years and that used in \citetappendix{Haanwinckel2020_appendix} yield estimates that are significant up to the 30th wage percentile but not above, due to very wide standard error bands, relative to P50. Relative to P90, the error bands are even wider. Both of these results suggest that the inclusion of a quadratic national trend is leaving little variation over and above that induced by the instrumented Kaitz-$p$ indices over the period from 1996 to 2018. In contrast, the specification based on the full set of years continues to show significant effects of the minimum wage up to the 90th percentile.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Comparison with \citet{Haanwinckel2020_appendix}: State FEs, linear state time trends, and quadratic national trend, IV in levels\label{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_levels}}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_levels_A}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB20A.pdf}% _figures/haanwinckel_state_trend_1_ntrend_2_iv_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_levels_B}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB20B.pdf}% _figures/haanwinckel_state_trend_1_ntrend_2_iv_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows three sets of estimation results (colored lines and error bars or shaded areas) based on different time periods: our baseline period from 1996--2018 (black circles and line), the subset years used in \citetappendix{Haanwinckel2020_appendix}, comprising 1996--2001, 2005--2009, and 2011--2013 (blue diamonds and line), and all available years from 1985--2018 (red triangles and line). The included controls comprise a set of state fixed effects, state-specific linear time trends, and a national quadratic time trend, which corresponds to the specification in \citetappendix{Haanwinckel2020_appendix}. The specification is estimated via IV in levels. The IV strategy instruments the Kaitz-$p$ index and its square using an instrument set that consists of the log real statutory minimum wage, its square, and the log real statutory minimum wage interacted with the mean of the log real median wage for the region over the full sample period. Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_levels_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_levels_B} uses the 90th percentile as the base wage (i.e., $p=90$). The error bars and shaded areas represent 99 percent confidence intervals based on standard errors that are clustered at the state level. %
+      \emph{\scriptsize{}Source: } RAIS, 1985--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\clearpage
+
+
+Next, we estimate specifications that include state fixed effects, state-specific linear trends, and a national quadratic trend via OLS in differences. %
+Figure \ref{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_diff} shows the results. Qualitatively, the results are similar to the OLS specification in levels above. All specifications show some significant effects above the median and up to the 85th percentile, relative to P50. At the same time, the standard error bands are relatively wider for the specification using only the subset of years in \citetappendix{Haanwinckel2020_appendix}. This becomes particularly evident when looking at the results relative to P90, which have error bands large enough to render some of the lower---but not the higher---wage percentiles insignificant. As above, the specification estimated on the full set of years remains significant throughout most of the wage distribution.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Comparison with \citet{Haanwinckel2020_appendix}: State FEs, linear national trend, OLS in differences\label{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_diff}}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_diff_A}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB21A.pdf}% _figures/haanwinckel_state_trend_0_ntrend_1_diff_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_diff_B}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB21B.pdf}% _figures/haanwinckel_state_trend_0_ntrend_1_diff_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows three sets of estimation results (colored lines and error bars or shaded areas) based on different time periods: our baseline period from 1996--2018 (black circles and line), the subset years used in \citetappendix{Haanwinckel2020_appendix}, comprising 1996--2001, 2005--2009, and 2011--2013 (blue diamonds and line), and all available years from 1985--2018 (red triangles and line). The included controls comprise a set of state fixed effects and a national linear time trend, which corresponds to the specification in \citetappendix{Haanwinckel2020_appendix}. The specification is estimated via OLS in differences. Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_diff_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{app_fig_haanwinckel_state_trend_1_ntrend_2_ols_diff_B} uses the 90th percentile as the base wage (i.e., $p=90$). The error bars and shaded areas represent 99 percent confidence intervals based on standard errors that are clustered at the state level. %
+      \emph{\scriptsize{}Source: } RAIS, 1985--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\clearpage
+
+
+Finally, we estimate specifications that include state fixed effects, state-specific linear trends, and a national quadratic trend via IV in differences. %
+Figure \ref{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_diff} shows the results. Qualitatively, the results are similar to the previous specification using OLS in differences. One notable difference is that, while our baseline estimates remain significant throughout most of the wage distribution, both relative to P50 and relative to P90, the estimates using the years in \citetappendix{Haanwinckel2020_appendix} are all significant up to the 85th wage percentile using our baseline set of years, but significant only up to the 15th wage percentile using the subset of years in \citetappendix{Haanwinckel2020_appendix}.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Comparison with \citet{Haanwinckel2020_appendix}: State FEs, linear national trend, IV in differences\label{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_diff}}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Relative to P50\label{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_diff_A}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB22A.pdf}% _figures/haanwinckel_state_trend_0_ntrend_1_iv_diff_p50_1996_2018.pdf
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Relative to P90\label{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_diff_B}]{%
+   \includegraphics[width=0.49\columnwidth]{_figures/figB22B.pdf}% _figures/haanwinckel_state_trend_0_ntrend_1_iv_diff_p90_1996_2018.pdf
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee}. Each panel shows three sets of estimation results (colored lines and error bars or shaded areas) based on different time periods: our baseline period from 1996--2018 (black circles and line), the subset years used in \citetappendix{Haanwinckel2020_appendix}, comprising 1996--2001, 2005--2009, and 2011--2013 (blue diamonds and line), and all available years from 1985--2018 (red triangles and line). The included controls comprise a set of state fixed effects and a national linear time trend, which corresponds to the specification in \citetappendix{Haanwinckel2020_appendix}. The specification is estimated via IV in differences. The IV strategy instruments the Kaitz-$p$ index and its square using an instrument set that consists of the log real statutory minimum wage, its square, and the log real statutory minimum wage interacted with the mean of the log real median wage for the region over the full sample period. Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_diff_A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{app_fig_haanwinckel_state_trend_1_ntrend_2_iv_diff_B} uses the 90th percentile as the base wage (i.e., $p=90$). The error bars and shaded areas represent 99 percent confidence intervals based on standard errors that are clustered at the state level. %
+      \emph{\scriptsize{}Source: } RAIS, 1985--2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+From this, we conclude that our results are largely robust to the set of specfications used in \citetappendix{Haanwinckel2020_appendix}, although for some specifications the standard error bands associated with the inclusion of quadratic national trends for the time period starting in 1996 leads to strikingly wide error bands. It is worth noting that our results are similarly pronounced and tightly estimated when using the full set of years from 1985 to 2018. In contrast, the results using the subset of years from \citetappendix{Haanwinckel2020_appendix} tend to deliver more noisy estimates, leading point estimates to turn insignificant lower in the wage distribution than would otherwise be the case.
+
+
+
+\paragraph{Summary.}
+
+From the above analysis, we conclude that the results presented in the main text are robust to alternative specifications, including those presented in \citetappendix{Haanwinckel2020_appendix}.
+
+Considering additional years of data between 1996 and 2018 (and, separately, between 1985 and 2018) allows us to exploit significantly more variation in the effective bindingness of the federal minimum wage---see Appendix \ref{app_subsec:comparison_Brazil_US}---which leads us to find minimum wage spillovers that robustly reach up to at least the 75th wage percentile. This finding is reassuring given that our structural model, as well as the alternative structural model developed by \citetappendix{Haanwinckel2020_appendix}, predict spillover effects throughout most of the wage distribution.
+
+To conclude, we note that there are other important differences between our work and the complementary analysis contained in \citetappendix{Haanwinckel2020_appendix}, over and above the exact specification and choice of years. For example, \citetappendix{Haanwinckel2020_appendix} uses the population of men and women between the ages of 18 and 54, while the analysis of the current paper \citepappendix{EngbomMoser2022_appendix} and that in \citetappendix{EngbomMoser2018_appendix} is restricted to only men. These differences likely explain the remaining divergence between our results and those presented in \citetappendix{Haanwinckel2020_appendix}.
+
+
+
+
+\clearpage
+\subsection{Comparison of relative bindingness of the minimum wage, Brazil versus U.S.\label{app_subsec:comparison_Brazil_US}}
+
+Table \ref{app_fig:comparison_Brazil_US} compares the relative bindingness of the minimum wage, as proxied by lower-tail wage inequality, between Brazil and the U.S.
+
+\begin{table}[!htb]
+  %
+  \centering
+  \caption{Lower-tail wage inequality in Brazil and in the U.S.\label{app_fig:comparison_Brazil_US}}
+  %
+  \pretabvspace
+  %
+  \input{_tables/tabB1.tex}
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}This table shows the relative bindingness of the minimum wage, as proxied by lower-tail wage inequality, for Brazil between 1996 and 2018 (column 1), Brazil from 1985 to 2018 (column 2), and the U.S. from 1979 to 2012. Lower-tail inequality is measured using the mean log wage percentile ratio P10/P50 computed across states in a given year. ``Minimum'' denotes the minimum of the mean log wage percentile ratio taken across all years in a given country. ``Maximum'' denotes the maximum of the mean log wage percentile ratio taken across all years in a given country. ``Range'' denotes the range (i.e., the maximum minus the minimum) of the mean log wage percentile ratio taken across all years in a given country. ``Standard deviation'' denotes the standard deviation of the mean log wage percentile ratio taken across all years in a given country. The data for Brazil are the same as used in the analysis presented in the main text and cover 1985 to 2018. The data for the U.S. are from \citetappendix{Autor2016_appendix}, who report these statistics between 1979 and 2012. %
+      \emph{\scriptsize{}Source:} RAIS, 1985--2018, and \citetappendix{Autor2016_appendix}.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{table}
+
+
+
+
+\clearpage
+\subsection{Comparison of wages in nominal terms and in multiples of the minimum wage\label{app_subsec:comparison_nominal_multiples}}
+
+In this subsection, we compare the distributions of (changes in) wages across two numeraires: current BRL and the current minimum wage. We demonstrate that while the minimum wage does share certain attributes of a numeraire \citepappendix{NeriMoura2006_appendix}, it does so imperfectly. Consequently, it is not purely mechanical that wages throughout the wage distribution are affected by the minimum wage, as documented in Section \ref{subsec:Spillover-effects-identified}.
+
+To see why the distinction between the two numeraires matters, consider the following example. Suppose worker A gets paid 2.0 times the minimum wage throughout their employment spell that lasts from January to June of a given calendar year. Suppose worker B also gets paid 2.0 times the minimum wage but their employment spell lasts from January to December. Now suppose that the statutory minimum wage stands at BRL 400 from January to June, then increases to BRL 500 from July to December. Then the two workers' wages are the same in multiples of the current minimum wage (i.e., both receive constant pay equal to 2.0 times the current minimum wage) but differ in terms of nominal BRL (i.e., worker A has a mean wage of BRL 400 that consists of a constant stream, while worker B has a mean wage of BRL 450 that changes levels over time). Therefore, the numeraire matters for our measure of wage dispersion within and across individuals.
+
+We begin our analysis with the variable in RAIS that contains each job's mean wage in multiples of the current minimum wage in each year, which is the one underlying our entire analysis in the main text. To obtain a wage measure in nominal BRL, we multiply the mean wage in multiples of the current minimum wage by the months-of-employment-weighted mean of the minimum wage prevailing during that year, using each job's start and end months. Our measurement likely contains some noise because both wages and the minimum wage itself can change over time within a job spell.
+
+Comparing log wages in current BRL and multiples of the current minimum wage, we note that only 2.4 percent of all workers have a constant wage in terms of multiples of the current minimum wage between two consecutive years. For comparison, that number is 0.2 percent in nominal terms. That the latter number is smaller than the former suggests that the minimum wage does serve some numeraire function. At the same time, both shares are small, highlighting the importance of idiosyncratic wage changes.
+
+Figure \ref{fig:nominal_vs_multiples} shows histograms of (changes in) wages in each of the two numeraires. Panel \subref{subfig:nominal_vs_multiples_A} shows that the distribution of log wages has a relatively more pronounced spike in multiples of the current minimum wage, which is our baseline wage measure. The distribution of one-year changes in log wages in panel \subref{subfig:nominal_vs_multiples_B} shows less dispersion in multiples of the minimum wage, particularly in the right tail. However, both distributions are significantly dispersed, indicating that by both wage measures are far from fixed at a constant multiple of the numeraire.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig:nominal_vs_multiples}Histograms of (changes in) log wages, nominal versus multiples of minimum wage}
+  %
+  \prefigvspace
+  %
+  \subfloat[\label{subfig:nominal_vs_multiples_A}Levels]{\includegraphics[width=.45\columnwidth]{_figures/figB23A.pdf}}% _figures/hist_ln_inc_norm_comp_1994_1998.pdf
+  \subfloat[\label{subfig:nominal_vs_multiples_B}One-year changes]{\includegraphics[width=.45\columnwidth]{_figures/figB23B.pdf}}% _figures/hist_D_ln_inc_comp_1994_1998.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure shows levels of (panel \subref{subfig:nominal_vs_multiples_A}) and one-year changes in (panel \subref{subfig:nominal_vs_multiples_B}) log wages in terms of two numeraires: current BRL and the current minimum wage. That is, each panel shows the distribution of earnings in log current BRL (blue bars), calculated as the logarithm of the mean multiples of the current minimum wage recorded during each calendar year multiplied by the mean minimum wage prevailing during the months of employment during that year, and the log mean multiples of the current minimum wage (red bars). For panel \subref{subfig:nominal_vs_multiples_A}, log wages in each numeraire are normalized to be mean zero. %
+      \emph{\scriptsize{}Source: } RAIS, 1994--1998.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+Another way to assess the minimum wage's numeraire function is a simple variance decomposition, where we write the variance of some outcome variable of interest, $y_{it}$, across individuals $i$ and years $t$ as
+%
+\begin{align}
+  Var(y_{it}) = \underbrace{Var(\mathbb{E}[y_{it} | i])}_{\text{Variance of individual-level means}} + \underbrace{Var(y_{it} - \mathbb{E}[y_{it} | i])}_{\text{Variance of dispersion around individual-level means}}. \label{eq:numeraire_var_decomposition}
+\end{align}
+%
+Here, the outcome variable $y_{it}$ can be either log wages or the one-year changes in log wages. Table \ref{tab:comparison_nominal_vs_multiples} shows the results from the variance decomposition in equation \eqref{eq:numeraire_var_decomposition} for different population subgroups (all workers, only stayers in the same occupation, only stayers at the same employer), for log wages versus one-year changes in log wages, and for the two numeraires: current BRL and the current minimum wage. Starting with wage levels in panel A, the total variance of log wages is slightly higher in current BRL than in multiples of the current minimum wage, 88.8 log points compared to 75.0 log points. Around 25 percent of the total variance is attributable to the variance of dispersion around individual-level means when measured in current BRL, compared to 12 percent when measured in multiples of the current minimum wage. This suggests that the minimum wage partially serves as a numeraire for wages in the economy. Turning now to one-year changes in log wages, we see that, at the same time, there is substantial dispersion in wages from one year to the next, regardless of the numeraire, with variances of 25.1 log points in current BRL and 17.9 log points in multiples of the current minimum wage. A similar share of the total variance of one-year changes in log wages is due to the variance of dispersion around individual-level means, around 73 percent in current BRL compared to 70 percent in multiples of the current minimum wage. This tells us that earnings are not fixed, not even in terms of multiples of the current minimum wage. Finally, Panels B and C show the same variance decompositions for workers who remain in the same occuapation (panel B) or at the same employer (panel C) between years, leading us to draw broadly similar conclusions.
+
+
+\begin{table}[!htb]
+  %
+  \centering
+  \caption{Comparison of wages in nominal terms and in multiples of the minimum wage\label{tab:comparison_nominal_vs_multiples}}
+  %
+  \pretabvspace
+  %
+  \input{_tables/tabB2.tex}
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}This table shows the total variance of log wages and of one-year changes in log wages based on equation \eqref{eq:numeraire_var_decomposition}. Panel A shows the results for the whole population, while panel B shows those for workers who stay in the same occupation between consecutive years and panel C shows those for workers who stay at the same employer between years. %
+      \emph{\scriptsize{}Source:} RAIS, 1994--1998.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{table}
+
+
+We conclude that, while the minimum wage does share certain attributes of a numeraire \citepappendix{NeriMoura2006_appendix}, it does so imperfectly. Thus, our empirical results in Section \ref{subsec:Spillover-effects-identified} are unlikely to be driven solely by this phenomenon.
+
+
+
+
+\clearpage
+\subsection{Hours distribution and its relation to the bindingness of the minimum wage\label{sec:Hours}}
+
+Most adult males in Brazil's formal sector work in a full-time contract,
+defined as either 40 work hours (spread across 5 days) or 44 work
+hours (spread across 6 days) per week. Figure \ref{fig: hours} shows
+the raw distribution of hours for this population for 1996 in panel \subref{subfig: hours-A}, and for 2018 in panel \subref{subfig: hours-B}.
+In the initial period, around 74 percent of all workers work 44 hours
+per week and another 15 percent work 40 hours per week, constituting
+around 89 percent of workers in full-time employment. Only arounnd
+five percent of all employees are in employment arrangements with
+less than 35 contractual work hours per week.\footnote{According to the Bureau of Labor Statistics a higher share, around
+12 percent of employees, works part-time (less than 35 hours) in the
+US in 2017.} Furthermore, the comparison between panels \subref{subfig: hours-A}
+and \subref{subfig: hours-B} show that there is no evidence over
+time---as the minimum wage increases---of a shift towards shorter
+work weeks in the aggregate. In contrast, there was a small reduction
+in the share of workers with 30 hour contracts that in the aggregate
+shifted toward 44 hour contracts.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig: hours}Histogram of contractual hours, 1996 and 2018}
+  %
+  \prefigvspace
+  %
+  \subfloat[\label{subfig: hours-A}1996]{\includegraphics[width=.45\columnwidth]{_figures/figB24A.pdf}}% _figures/hours_hist_1996.pdf
+  \subfloat[\label{subfig: hours-B}2018]{\includegraphics[width=.45\columnwidth]{_figures/figB24B.pdf}}% _figures/hours_hist_2018.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure shows density of contractual
+      work hours for period 1996--2000 in panel \subref{subfig: hours-A}
+      and for 2018 in panel \subref{subfig: hours-B}. A small number of observations
+      reporting more than 60 hours are omitted from the graphs. %
+      \emph{\scriptsize{}Source: } RAIS, 1996 and 2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+Going beyond the aggregate statistics, there is also little systematic
+covariation between the relative bindingness of the minimum wage and
+work hours across Brazilian states. Figure \ref{fig: hours-kaitz}
+shows that both the share of full-time employment in panel \subref{subfig: hours-kaitz-A}
+and the mean number of hours in panel \subref{subfig: hours-kaitz-B}
+stay constant as the minimum wage increases between 1996 and 2018.
+While in 1996 there is a weak systematic negative relationship between
+the full-time worker share and the bindngnes of the minimum wage,
+measured by the Kaitz-50 index, this appears almost entirely driven by
+transitory fluctuations and permanent state-specific heterogeneity,
+rather than a correlation with the rising minimum wage over time within
+states.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{\label{fig: hours-kaitz}Relation between contractual hours and bindingness of the minimum wage}
+  %
+  \prefigvspace
+  %
+  \subfloat[\label{subfig: hours-kaitz-A}Mean contractual hours]{\includegraphics[width=.45\columnwidth]{_figures/figB25A.pdf}}% _figures/hours_kaitz_mean.pdf
+  \subfloat[\label{subfig: hours-kaitz-B}Share of workers in full-time employment]{\includegraphics[width=.45\columnwidth]{_figures/figB25B.pdf}}% _figures/hours_kaitz_full_time_share.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes:}{\scriptsize{} Figure shows for male workers
+      of age 18--49 the share in full-time employment, defined as working
+      40 hours or more (panel \subref{subfig: hours-kaitz-A}), and the
+      mean number of contractual work hours (panel \subref{subfig: hours-kaitz-B}),
+      against the Kaitz-50 index, $kaitz_{st}(50)\equiv\log w_{t}^{min}-\log w_{st}^{\text{P}50}$,
+      across states in 1996 and 2018. Area of circles is proportional to
+      population size. %
+      \emph{\scriptsize{}Source: } RAIS, 1996 and 2018.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}

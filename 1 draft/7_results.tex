@@ -1,0 +1,330 @@
+% !TEX root = EIMW2022.tex
+
+\section{The equilibrium effects of the minimum wage\label{SECTION: Results}}
+
+Having estimated the model to the preperiod from 1994--1998, we compare the model-implied impact of an increase in the minimum wage with that estimated in the Brazilian data across space and time.
+
+\subsection{The impact of the minimum wage on wage inequality\label{subsec:spillovers_model_data}}
+
+Our main interest lies in the impact of the minimum wage on wage inequality. To assess this, we start by comparing the model-predicted effects of the minimum wage on inequality with the estimates from our reduced-form approach following \citet{Lee1999} and \citet{Autor2016}. To that end, we simulate ``state-year-level'' data from our estimated model by varying only the level of the minimum wage relative to mean worker ability in order to replicate the empirical distribution of Kaitz-$p$ indices across Brazil's 27 states over time.%
+%
+\footnote{We treat each model state as its own, isolated economy, with no worker or firm mobility between them. An interesting avenue for future work would be to incorporate into our model a richer spatial structure, as in \citet{Zhang2018}.} %
+%
+We then run the same regression \eqref{eq:Lee} on our model simulations as we did on the data in Section \ref{subsec:Spillover-effects-identified}.
+
+Figure \ref{fig: Lee data model vs data} shows that the estimated effect of the minimum wage in the model matches well that based on estimated across states and time in the data. For parsimony, we focus here on our preferred specification that uses an OLS strategy, state fixed effects, and state-specific linear time trends.%
+%
+\footnote{Appendix \ref{app_subsec:comparing_spillovers_model_data} compares predicted spillover effects based on the model and the data under additional IV specifications.} %
+%
+In the specification relative to the 50th percentile, the point estimates in the model fall within the 99 percent confidence interval of the empirical estimates for the bottom 60 percent of the wage distribution. Above the 60th percentile, the model estimates are somewhat more pronounced than in the data. In the specification relative to the 90th percentile, the point estimates in the model are somewhat smaller than the data.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Model vs. data: Estimated minimum wage effects throughout the wage distribution\label{fig: Lee data model vs data}}
+  %
+  \prefigvspace
+  %
+  \subfloat[Relative to P50\label{subfig: Lee data model vs data A}]{\includegraphics[width=0.45\columnwidth]{_figures/fig8A.pdf}}% _figures/comp_state_trend_1_p50_se1_1996_2018.pdf
+  \subfloat[Relative to P90\label{subfig: Lee data model vs data B}]{\includegraphics[width=0.45\columnwidth]{_figures/fig8B.pdf}} % _figures/comp_state_trend_1_p90_se1_1996_2018.pdf
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Figure plots estimates of the marginal effects from equation \eqref{eq:Lee_marginal_effect} based on the regression framework in equation \eqref{eq:Lee} estimated across Brazil's 27 states. Results from four separate estimates are shown, namely the combination of two base percentiles---P50 (panel \subref{subfig: Lee data model vs data A}) and P90 (panel \subref{subfig: Lee data model vs data B})---and two sources---the RAIS data (black circles and solid lines) and model-simulated data (magenta crosses and dashed lines). All estimates use a specification that includes state fixed effects in addition to state-specific linear time trends, estimated using OLS. Within each panel, the estimated marginal effect of the minimum wage on the standard deviation of log earnings (``St.d.'' on the x-axis) and on wages between the 10th and the 90th percentiles of the wage distribution (``10'' to ``90'' on the x-axis) relative to some base wage $p$ are shown. Panel \subref{subfig: Lee data model vs data A} uses the 50th percentile as the base wage (i.e., $p=50$), while panel \subref{subfig: Lee data model vs data B} uses the 90th percentile as the base wage (i.e., $p=90$). The four error bars and four shaded areas represent 99 percent confidence intervals based on regular (i.e., not clustered) standard errors.
+      \emph{\scriptsize{}Source: } RAIS, 1996--2018, and model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+We next turn to the aggregate time trend in Brazil between 1996 and 2018. To that end, we feed in the observed increase in the effective minimum wage in Brazil between 1996 and 2018. Specifically, we consider a productivity-adjusted increase in the minimum wage of 57.7 log points, which corresponds to the rise in the productivity growth-adjusted real minimum wage between 1996 and 2018. Holding all other parameters fixed, we contrast the impact of the increase in the minimum wage on inequality in the model with the aggregate time trend over this period.
+
+Figure \ref{figure: cdfs} illustrates the impact of the minimum wage increase on wages throughout the distribution. Panel \subref{figure: cdfs a} shows that the cdf in 2018 first-order stochastically dominates that in 1996. The right shift of the cdf is particularly evident for the lower half of the wage distribution, reflecting the bottom-driven impact of the minimum wage.%
+%
+\footnote{The reason why the wage cdf in 2018 appear to start at the same point as that in 1996 is the assumed measurement error in wages. Because measurement error is normal and hence unbounded, there are always some workers who have very low measured pay, regardless of the prevailing minimum wage.} %
+%
+Panel \subref{figure: cdfs b} plots the difference in log wages between 1996 and 2018 conditional on the cdf in each year. Naturally, the minimum wage pushes up wages one-for-one at the bottom of the distribution. More surprisingly, it also impacts wages strictly above the bottom. The wage increase is around 28, 15, 6, 2 and 1 percent at the 10th, 25th, 50th, 75th and 90th percentile, respectively. Nevertheless, while spillover effects of the minimum wage are far-reaching, their absolute magnitude is moderate above the median.\footnote{The reason why the effect of the minimum wage in Figure \ref{fig: Lee data model vs data} appears to be close to linear while that in panel \subref{figure: cdfs b} of Figure \ref{figure: cdfs} is distinctly convex is because the former plots the marginal effect while the latter shows the (nonlinear) total effect.}
+
+
+\begin{figure}[!htb]
+
+  \centering
+  \caption{Impact of the minimum wage throughout the wage distribution in the model\label{figure: cdfs}}
+  %
+  \prefigvspace
+  \subfloat[Inverse cdfs of log wages\label{figure: cdfs a}]{\includegraphics[width=.45\columnwidth]{_figures/fig9A.png}} % _figures/WageCDF1.png
+  \subfloat[Change in log wages\label{figure: cdfs b}]{\includegraphics[width=.45\columnwidth]{_figures/fig9B.png}} % _figures/WageCDF2.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Impact of a 57.7 log point increase in the minimum wage in the estimated model. Panel \subref{figure: cdfs a} shows the cdfs of log wages in 1996 and 2018, respectively, conditional on wages at or above the minimum wage. Panel \subref{figure: cdfs b} shows the change in log wages due to the minimum wage conditional on the cdf in each year. %
+      \emph{\scriptsize{}Source: } Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+Table \ref{table: impact of minimum wage} compares the model-implied effects of the minimum wage on wage inequality with the raw data in 1996 and 2018. The rise in the minimum wage accounts for 45 percent of the empirical decline in the variance of log wages over this period.%
+%
+\footnote{Appendix \ref{app_subsec:akm_decomposition} shows the contribution of the minimum wage toward changes over time in an AKM wage decomposition. Through the lens of the reduced-form AKM wage equation, the minimum wage acts through a combination of compression in person fixed effects, compression in firm fixed effects, and a declining covariance between the two.} %
+%
+Consistent with the observed data pattern, the minimum wage causes a greater absolute reduction in lower-tail inequality relative to upper-tail inequality. It also accounts for a larger share of the decline in lower-tail inequality measures, varying from 73 percent of the P5-P50 log wage percentile ratio to 49 percent of the P25-P50 log wage percentile ratio. The minimum wage still has effects on upper-tail inequality, explaining 18 percent of the empirical compression in P50-P90 log wage percentile ratio. The reason for this is that spillover effects reach above the median of the wage distribution.
+
+\begin{table}[!htb]
+  %
+  \begin{small}
+  \centering
+  \caption{Total impact of the minimum wage on wage inequality, model versus data\label{table: impact of minimum wage}}
+  %
+ \input{_tables/tab5.tex} % _tables/Results.tex
+  %
+  \\
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      {\scriptsize \textit{Notes:} Table shows estimated impact of a 57.7 log point increase in the minimum wage in the model as well as the raw data. Percentile ratios of log wages, constructed as the sum of wages from a given employer over the five year sample period divided by the sum of months worked for that employer over each five year period. Model and data sample selection and variable construction is identical. See text for detail. %
+      \textit{Source:} Model and RAIS.}
+    \end{spacing}
+  \end{minipage}
+  %
+  \end{small}
+\end{table}
+
+One potential concern may be that the job ladder model captures well the labor market experiences of young workers, but is a worse description of the dynamics of older workers. To speak to such concerns, Appendix \ref{app_subsec:young_only} reestimates the model for the population of only young workers aged 18--36, and resimulates the effects of the same minimum wage increase as previously considered. We reach qualitatively similar conclusions for the set of young workers and, if anything, find more far-reaching spillover effects of the minimum wage, as expected given the relatively high bindingness of the minimum wage among young workers.
+
+
+\subsection{Understanding the distributional effects of the minimum wage}
+
+To understand the impact of the minimum wage on wage inequality, we write the variance of log wages as the sum of between- and within-worker components:
+%
+\begin{eqnarray}
+  Var(w) &=& \int\displaylimits_{a,s} \int\displaylimits_z \Big( w(z|a,s) - \overline{w}\Big)^2 dG(z|a,s)\frac{e(a,s)}{E} d\Omega(a,s) \label{eq: within vs between} \\
+  &=& \underbrace{\int\displaylimits_{a,s} \Big( \overline{w}(a,s) - \overline{w}\Big)^2 \frac{e(a,s)}{E} d\Omega(a,s)}_{\text{between-worker component}}
+  + \underbrace{\int\displaylimits_{a,s} \int\displaylimits_z \Big( w(z|a,s) - \overline{w}(a,s)\Big)^2 dG(z|a,s)\frac{e(a,s)}{E} d\Omega(a,s)}_{\text{within-worker component}}, \nonumber
+\end{eqnarray}
+%
+where $\Omega(a,s)$ is the joint distribution over worker ability $a$ and search efficiency $s$, $E=\int_{a,s} e(a,s) d\Omega(a,s)$ is aggregate employment, $\overline{w}=\int_{a,s}\int_z w(z|a,s) dG(z|a,s) (e(a,s)/E) d\Omega(a,s)$ is the population mean log wage, and $\overline{w}(a,s)=\int_z w(z|a,s) dG(z|a,s)$ is the mean log wage of type-$(a,s)$ workers. The between-worker component captures average differences across worker types, while the within-worker component reflects wage differences among workers of the same type due to employer heterogeneity.
+
+Building on the decomposition in equation \eqref{eq: within vs between}, we consider two counterfactual experiments. First, fixing the initial allocation of workers, $e(a,s)$ and $g(z|a,s)$, we let firms' wage policies given by $w(z|a,s)$ adjust in response to the minimum wage. We label this the rent channel because it captures redistribution of rents from firms to workers. Second, fixing firms' wage policies, $w(z|a,s)$, we let the allocation of workers given by $e(a,s)$ and $g(z|a,s)$ adjust to the higher minimum wage. %
+We call this the {reallocation channel} because it reflects changes in the wage distribution due to worker reallocation across firms.
+
+Table \ref{table: wage decomposition} presents the results from these counterfactual exercises.%
+%
+\footnote{Numbers presented here are based on the analytical solution for wages in the model, while Table \ref{table: impact of minimum wage} uses simulated data.} % %
+We find that 61 percent of the overall variance of log wages is between worker types, while 39 percent is within worker types across firms. The higher minimum wages causes both the between- and the within-worker components to decline, making up 87 and 13 percent, respectively, of the overall decline. The rent channel---firms raising pay for identical workers---is the most important factor behind compression in both the within- and the between-worker components. The reallocation channel also matters for the compression in the between-worker component but less so for the compression in the within-worker component.
+
+
+\begin{table}[!htb]
+  %
+  \begin{small}
+  \centering
+  \caption{Decomposition of effect of minimum wage on wages, model\label{table: wage decomposition}}
+  %
+  \input{_tables/tab6.tex} % _tables/Decomposition.tex
+  %
+  \\
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      {\scriptsize \textit{Notes:} Table shows estimated impact of a 57.7 log point increase in the minimum wage. Decomposition of log wages based on \eqref{eq: within vs between} using exact (nonsimulated) model wages (i.e. without  measurement error $\kappa$ and not aggregated to the annual level following our empirical approach). The rent channel is the counterfactual impact of letting the wage policies $w(z|a,s)$ adjust while holding fixed the allocation of workers $\{g(z|a,s),e(a,s)\}$. The reallocation channel is the counterfactual impact of letting the allocation of workers $\{g(z|a,s),e(a,s)\}$ adjust, while holding fixed wage policies $w(z|a,s)$. %
+      \textit{Source:} Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+ \end{small}
+\end{table}
+
+To shed further light on the rent and reallocation channels of the minimum wage, we zoom in on a group of workers most affected by the minimum wage---specifically, the first percentile of worker ability. Figure \ref{figure: minimum wage mechanics} plots changes in firms' piece rate offers and vacancies against log firm productivity. Panel \subref{figure: minimum wage mechanics a} shows that the minimum wage causes all firms to raise pay. Because low-ability workers' pay rises across the board, between-worker inequality falls. Moreover, low-productivity firms raise pay by more than high-productivity firms, consistent with the empirical decline in pass-through from firm productivity to pay over this period \citep{ABEM2018}. Therefore, the minimum wage also reduces the within-component of wage inequality. Panel \subref{figure: minimum wage mechanics b} shows that low-productivity firms cut vacancy creation, as their profit margins are squeezed. In contrast, the most productive firms actually increase their recruiting intensity, for reasons that we discuss below. Consequently, employment reallocates toward more productive, higher-paying firms. Since this leads to less positive assortative matching between workers and firms in lower-skill markets, between-worker inequality also falls.%
+%
+\footnote{We provide empirical support for this model prediction in Appendix \ref{app_subsec:impact_sorting}.} %
+%
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Changes in firms' wage and vacancy policy in low-ability market, model\label{figure: minimum wage mechanics}}
+  %
+  \prefigvspace
+  %
+  \subfloat[Wage policy\label{figure: minimum wage mechanics a}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/fig10A.png}} % _figures/ModelMechanicsChange_wage.png
+  \subfloat[Vacancy policy\label{figure: minimum wage mechanics b}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/fig10B.png}} % _figures/ModelMechanicsChange_vacancy.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      {\scriptsize \textit{Notes:} Impact of a 57.7 log point (i.e. 55.9 percent) increase in the minimum wage in the estimated model among workers with positive search efficiency, $s(a)>0$, in the first percentile of the worker ability distribution. Panel \subref{figure: minimum wage mechanics a} shows the percentage change in firms' wage policy, $w(z|a,s)$, by unweighted (i.e., not employment-weighted) productivity, $z$. Panel \subref{figure: minimum wage mechanics b} shows the percentage change in firms' vacancy policy, $w(z|a,s)$, by unweighted (i.e., not employment-weighted) productivity, $z$. %
+      \textit{Source:} Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+
+\subsection{Aggregate effects of the minimum wage}
+
+Having understood the changes in rent sharing and worker reallocation at the micro level, we now turn to the aggregate consequences of the minimum wage. Table \ref{table: impact of minimum wage on aggregates} shows that the aggregate employment rate falls, consistent with the intuition that a higher wage floor discourages job creation. However, the fall is a modest 0.7 percent.%
+%
+\footnote{This number masks significant heterogeneity. Among the lowest-skill workers, employment falls by over 15 percent, while employment is essentially unaffected for workers in the top half of the ability distribution. See Appendix \ref{app_subsec:effects_dependence_on_parameters} for details.} %
+%
+At the same time, aggregate output and labor productivity increase by one and three percent, respectively. Aggregate costs of recruiting rise modestly, as vacancy creation shifts toward more productive firms who have a higher marginal cost of a vacancy. The total wage bill increases by two percent.%
+%
+\footnote{As shown in Figure \ref{figure: cdfs}\subref{figure: cdfs b}, wages increase by much more at the bottom. However, the aggregate wage bill is dominated by the top of the distribution, where wages change by little.} %
+%
+Profits decrease by less than 0.1 percent. As a result, the labor share increases by a modest 0.4 percent.
+
+To summarize, labor reallocation across firms mediates the effects of the minimum wage in three ways. First, it buffers the disemployment effects. Second, it increases employment-weighted productivity and output. Third, it shifts workers to firms with higher profits and lower labor shares. As a consequence, the aggregate effects of the minimum wage are relatively muted. These rich predictions regarding worker reallocation depend critically on our model incorporating firms and would be missed by a one-worker-per-firm matching model of the labor market.
+
+\begin{table}[!htb]
+  %
+ \begin{footnotesize}
+  \centering
+  \caption{Impact of minimum wage on aggregate outcomes, model\label{table: impact of minimum wage on aggregates}}
+  %
+  \input{_tables/tab7.tex} % _tables/Aggregate.tex
+  %
+  \\
+  %
+  \posttabvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      {\scriptsize \textit{Notes:} Table shows estimated impact of a 57.7 log point increase in the minimum wage on aggregate outcomes in the simulated economy. Employment rate is $E = \int e(a,s) d\Omega(a,s)$. Aggregate output is $\log Y = \log \left( \int azdG(z|a,s)e(a,s)d\Omega(a,s) \right)$. Log labor productivity is $\log (Y/E)$. Log aggregate recruiting cost is $\log C = \log \left( M \int a c(a,s) \frac{v(z|a,s)^{1+\eta}}{1+\eta} d\Gamma(z)dads\right)$. Log aggregate output minus recruiting costs is $\log (Y-C)$. Log wage bill is $\log W = \log \left( \int a w(z|a,s)dG(z|a,s)e(a,s)d\Omega(a,s)\right)$. Log profits, $\log(Y-W-C)$. Labor share is $W/Y$ %
+      \textit{Source:} Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+ \end{footnotesize}
+\end{table}
+
+
+To understand why the muted employment effects of the minimum wage, it is useful to note that the change in a firm's vacancy creation in market $(a,s)$ with respect to the minimum wage can be written as
+\begin{eqnarray}
+  \underbrace{ \frac{d \log v(z|a,s)}{d \log w^{min}} }_{\text{firms' recruiting response}} &=& \underbrace{ \frac{1}{\eta} \frac{ d \log \Big(z-w(z|a,s)\Big)}{d \log w^{min}}}_{\text{profit channel}} \ \ + \ \ \underbrace{ \frac{1}{\eta} \frac{ d \log \left( q(a,s) \left( \frac{u(a,s)}{S(a,s)}+ \frac{s e(a,s)}{S(a,s)} G(z|a,s)\right) \right)}{d \log w^{min}} }_{\text{fill channel}}   \label{eq: vacancy decomposition} \\
+  &+& \underbrace{ -\frac{1}{\eta} \frac{d{\log\Big(\delta(a,s)+sp(a,s)(1-F(z|a,s))\Big)}}{d \log w^{min}}}_{\text{retention channel}}. \nonumber
+\end{eqnarray}
+%
+Because our estimated curvature of the vacancy cost function is rather low with $\eta \approx 0.5$ and optimal vacancies scale with $1/\eta$, firms' recruiting response to the minimum wage is relatively elastic. In spite of this, we find a quantitatively small response of firm-level employment to the minimum wage due to three offsetting channels in equation \eqref{eq: vacancy decomposition}. The first is the {profit channel}, which captures changes in pay at firms with constant productivity, which affect profits. The second is the {fill channel}, which captures changes in the fill rate of jobs due to interfirm competition. The fill rate depends on the rate $q(a,s)=(V(a,s)/S(a,s))^{\alpha-1}$ at which a vacancy contacts a worker, the unemployed share $u(a,s)/S(a,s)$, and the employed share's earnings distribution $G(z|a,s)$. The third is the {retention channel}, which captures changes in match duration due to changes in the rate of poaching by other firms, $sp(a,s)(1-F(z|a,s))$.
+
+Panel \subref{figure: impact of minimum wage on employment a} of Figure \ref{figure: impact of minimum wage on employment} shows the results from decomposing firms' recruiting response to the minimum wage based on equation \eqref{eq: vacancy decomposition} across productivity levels. To illustrate the forces at work, we focus again on a group of workers most affected by the minimum wage---specifically, the first percentile of worker ability. The profit channel reduces vacancy creation for all firms for low-productivity firms with smaller profit margins to begin with. The fill rate channel is positive throughout, U-shaped, and varies less across productivity levels. Finally, the retention channel varies in sign, follows an inverse-U shape, and not far from zero throughout. Summing over all three channels, firms' recruiting response to the minimum wage is increasing and concave, negative at the bottom, and positive at higher productivity levels.
+
+Turning next to the aggregate response of employment in market $(a,s)$, it writes identically as
+\begin{eqnarray}
+  \underbrace{ \frac{d \log e(a,s)}{d\log w^{min}} }_{\text{aggregate employment reponse}} &=& \underbrace{\frac{d\log e(a,s)}{d\log p(a,s)}}_{\text{job finding channel}} \ \times \ \underbrace{\frac{d\log p(a,s)}{d\log V(a,s)}}_{\text{congestion channel}} \ \times \ \ \ \underbrace{\frac{d\log V(a,s)}{d\log w^{min}}}_{\text{vacancy channel}}. \label{eq: employment decomposition}
+\end{eqnarray}
+Hence, the minimum wage impacts aggregate employment through three channels. First, the job finding channel captures the impact of a change in the job finding rate, $p(a,s)$, on employment, $e(a,s)$. Under the simplifying assumption that the probability of a type transition upon job loss is small ($\pi \to 0$),
+\begin{eqnarray*}
+  \frac{d\log e(a,s)}{d\log p(a,s)} &=& \frac{\delta(a,s)}{\delta(a,s)+p(a,s)} \ \ \approx \ \ 0.6,
+\end{eqnarray*}
+assuming approximations of $\delta(a,s) \approx 0.07$, and $p(a,s) \approx 0.04$. Second, the congestion channel captures the impact of aggregate vacancies, $V(a,s)$, on the job finding rate, $p(a,s)$. Simplifying,
+%
+\begin{eqnarray*}
+  \frac{d\log p(a,s)}{d\log V(a,s)} \ \ = \ \ \alpha \frac{1}{\left(1-\alpha\frac{(1-s(a))\delta(a,s) p(a,s)}{(\delta(a,s)+s(a)p(a,s))(\delta(a,s)+p(a,s))}\right)} \ \ \approx \ \  \alpha \ \ = \ \ 0.5,
+\end{eqnarray*}
+%
+assuming an approximation of $s(a) \approx 1.0$ and using $\alpha = 0.5$. Third, the vacancy channel captures the impact of the minimum wage $w^{min}$ on aggregate vacancies, $V(a,s)$. This channel simply equals the integral over firms' recruiting responses to the minimum wage corresponding to equation \eqref{eq: vacancy decomposition} above.
+
+Panel \subref{figure: impact of minimum wage on employment b} of Figure \ref{figure: impact of minimum wage on employment} shows the results from decomposing the aggregate employment response to the minimum wage based on equation \eqref{eq: employment decomposition} across ability ranks. %
+Only workers in the bottom half of the ability distribution are affected. The job finding and congestion channels are roughly constant and positive. The vacancy channel is negative and increases from around $-0.8$ to $0.0$. Combining the channels yields an aggregate employment response that ranges from around $-0.3$ to $0.0$ log points.
+
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Decomposing the effect on employment\label{figure: impact of minimum wage on employment}}
+  %
+  \prefigvspace
+  %
+  \subfloat[Firms' emp. response within market\label{figure: impact of minimum wage on employment a}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.45\linewidth]{_figures/fig11A.png}} % _figures/MWandFirmOutcomes.png
+  \subfloat[Aggregate emp. response across markets\label{figure: impact of minimum wage on employment b}]{\includegraphics[trim={.1in .12in 0in .3in},clip,width=.45\linewidth]{_figures/fig11B.png}} % _figures/MWandAggregateOutcomes.png
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      {\scriptsize \textit{Notes:} Panel \subref{figure: impact of minimum wage on employment a} shows a decomposition of firms' recruiting response to a 57.7 log point increase in the minimum wage based on equation \eqref{eq: vacancy decomposition} for the market with $(a=\underline{a},s>0)$. Panel \subref{figure: impact of minimum wage on employment b} shows a decomposition of the aggregate employment response across ability markets based on equation \eqref{eq: employment decomposition} for $s > 0$. Both panels show log changes in each component (e.g., $0.2 \approx 20$ percent). JF stands for job finding. %
+      \textit{Source:} Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
+
+In light of the decompositions \eqref{eq: vacancy decomposition}--\eqref{eq: employment decomposition}, Appendix \ref{app_subsec:emp_effects_dependence_on_parameters} assesses the robustness of our estimated modest employment response to the increase in the minimum wage with respect to the underlying structural parameters. Over plausible ranges, the estimated employment response remains modest.
+
+
+\subsection{When are the effects of the minimum wage on wage inequality large?\label{subsec:comparative_statics}}
+
+Maybe our most striking finding is the large inequality reduction due to the minimum wage. This result is so striking because previous work on the distributional effects of the minimum wage has found smaller effects in the U.S. \citep{Lee1999, Autor2016, FortinLemieuxLloyd2021}, Canada \citep{FortinLemieux2015, Brochuetal2018}, and the U.K. \citep{ButcherDickensManning2012}. To reconcile these differences, we explore the sensitivity of our results with respect to four model parameters---the mean of worker ability, $\mu$, the tail index of the productivity distribution, $\zeta$, the separation rate intercept, $\delta_{0}$, and the job finding rate, $\lambda$.%
+%
+\footnote{Appendix \ref{app_subsec:effects_dependence_on_parameters} shows the same comparative statics results with respect to other model parameters. Naturally, our analysis comes with the caveat that, for these experiments, we are considering a movement in only one parameter while holding all other parameters fixed at their estimated values.}
+%
+
+Panel \subref{figure: robustness A} of Figure \ref{figure: robustness} shows that a higher mean worker ability, $\mu$, significantly reduces the distributional effects of the minimum wage. Higher values of $\mu$ imply that the minimum wage is less binding initially, so the marginal effect of an increase in the minimum wage is smaller. In Appendix \ref{app_subsec:comparison_Brazil_US}, we show that the bindingness of the minimum wage, measured by the P10-P50 log wage percentile ratio, is up to 26 log points higher in Brazil compared to the U.S. Counterfactually reducing $\mu$ by 26 log points to mimic the U.S. moment indicates that the effects on the variance of log wages are around 50 percent higher in Brazil compared to the U.S. due to the relatively greater initial bindingness of the minimum wage in Brazil.%
+%
+\footnote{Note that due to spillover effects of the minimum wage, $\mu$ would need to change by even more than 26 log points in order to change the P10-P50 log wage percentile ratio by 26 log points.} %
+%
+
+Panel \subref{figure: robustness B} shows that the a weaker inequality-reducing effect of the minimum wage for higher values of the productivity tail parameter $\zeta$. While our estimate of $\zeta = 3.5$ corresponds to a variance of AKM firm fixed effects of 19.5 log points, \citet{SongPriceGuvenenBloomvonWachter2018} report that variance to be 6.7 log points in the U.S. from 1994--2000. %
+For our model to replicate the U.S. moment would require $\zeta = 5.8$ (see panel \subref{figure: identification 3b} of Appendix Figure \ref{figure: identification 3}), which would imply that the effects on the variance of log wages are around 18 percent higher in Brazil compared to the U.S. due to the relatively greater productivity dispersion in Brazil.
+
+Panel \subref{figure: robustness C} shows that a higher job finding rate $\lambda$ amplifies the effects of the minimum wage on inequality, although the gradient is flatter than in the previous two cases. By comparison, the inequality reduction due to the minimum wage is relatively invariant to the separation rate intercept $\delta_{0}$ (panel \subref{figure: robustness D}).
+
+Besides our parameter estimates discussed above, other reasons for why we find relatively large effects of the minimum wage on inequality in Brazil may include the nature of wage setting. Our model assumes that all wages are posted, which is consistent with existing evidence that lower-skill jobs are more likely to post---rather than bargain over---wages \citep{Hall2012}. In related work, \citet{FlinnMullins2018} show that spillover effects of the minimum wage can be smaller in an economy where wages are sometimes bargained over, which is likely more so the case in the U.S. than in Brazil.
+
+\begin{figure}[!htb]
+  %
+  \centering
+  \caption{Minimum wage effects on wage inequality across selected model parameters\label{figure: robustness}}
+  %
+  \prefigvspace
+  %
+  \hspace*{\fill}%
+  \csubfloat[Mean worker ability\label{figure: robustness A}]{%
+   \includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/fig12A.png}% _figures/Robustness_wage_mu.png
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Tail index of firm productivity\label{figure: robustness B}]{%
+   \includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/fig12B.png}% _figures/Robustness_wage_zeta.png
+    %
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \hspace*{\fill}%
+  \csubfloat[Job finding rate\label{figure: robustness C}]{%
+   \includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/fig12C.png}% _figures/Robustness_wage_lambda.png
+    %
+  }\centerhfill[\qquad\qquad\qquad\qquad\qquad]
+  \csubfloat[Separation rate\label{figure: robustness D}]{%
+   \includegraphics[trim={.0in .12in 0in .3in},clip,width=.40\columnwidth]{_figures/fig12D.png}% _figures/Robustness_wage_delta0.png
+  }\hspace*{\fill}
+  %
+  \\
+  %
+  \postfigvspace
+  %
+  \begin{minipage}[t]{1\columnwidth}%
+    \begin{spacing}{0.75}
+      \emph{\scriptsize{}Notes: }{\scriptsize{}Estimated impact of a 57.7 log point increase in the minimum wage across different parameter values, varying one parameter at a time and holding fixed all other parameters at their estimated values. %
+      \emph{\scriptsize{}Source: } Model.}
+    \end{spacing}
+  \end{minipage}
+  %
+\end{figure}
